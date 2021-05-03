@@ -5,6 +5,7 @@ function App() {
     return (
     <div className="Main">
       <TitleCard/>
+      <div className="Content1"></div>
     </div>
     )
 };

@@ -1,31 +1,39 @@
-import React from "react";
-import { useSpring, animated, useTrail } from "react-spring"
+import React, { useState, useEffect } from "react";
+import { useSpring, animated, useTrail } from "react-spring";
+import { useScroll } from "react-use-gesture";
+import { useMediaQuery } from "react-responsive";
 
 function TitleCard() {
-  const containerFill = useSpring({
-    from: {
-      transform: "translate(0, 20vh)",
-    },
-    transform: "translate(0, 0)",
-    delay: 3500,
-    config: {
-      mass: 2,
-      tension: 280,
-      friction: 35,
-    }
-  });
+  const mediaQ = useMediaQuery({ query: '(max-aspect-ratio: 1/1)' });
+
+  const scrollThresh = () => {
+      if(mediaQ) {
+          return 650;
+      } else {
+          return 400;
+      };
+  };
+  
+  const [scrollVal, api] = useSpring(() => ({scroll: 0}));
+
+  useScroll(({ xy: [, y] }) => 
+    api.start({
+      scroll: Math.min(Math.max(parseInt(y), 0), scrollThresh()),
+    }),
+    { domTarget: window },
+  );
   
   const textPos = useSpring({
     from: {
-      transform: "translate(15vw, -5rem)"
+      transform: "translate(15vw, -30vh)",
     },
     to: [
       {
         transform: "translate(15vw, 0)", 
         config: {
-          mass: 4,
+          mass: 5,
           tension: 480,
-          friction: 45,
+          friction: 85,
       }},
       {transform: "translate(0, 0)", delay: 400},
     ],
@@ -57,12 +65,12 @@ function TitleCard() {
     skills.length,
     {
       config: {
-        mass: 4,
-        tension: 190,
-        friction: 30,
+        mass: 2,
+        tension: 790,
+        friction: 70,
       },
       delay: 2100,
-      from: {transform: "translate(0, 3rem)"}, 
+      from: {transform: "translate(0, 5em)"}, 
       to: {transform: "translate(0, 0)"},
     }
   );
@@ -71,12 +79,12 @@ function TitleCard() {
     skills2.length,
     {
       config: {
-        mass: 3,
-        tension: 190,
-        friction: 37,
+        mass: 2,
+        tension: 790,
+        friction: 77,
       },
-      delay: 2700,
-      from: {transform: "translate(0, 3rem)", opacity: 1}, 
+      delay: 2300,
+      from: {transform: "translate(0, 5em)", opacity: 1}, 
       to: {transform: "translate(0, 0)", opacity: .6},
     }
   );
@@ -85,20 +93,35 @@ function TitleCard() {
     skills3.length,
     {
       config: {
-        mass: 3,
-        tension: 210,
-        friction: 42,
+        mass: 2,
+        tension: 810,
+        friction: 82,
       },
-      delay: 3300,
-      from: {transform: "translate(0, 3rem)", opacity: 1}, 
+      delay: 2500,
+      from: {transform: "translate(0, 5em)", opacity: 1}, 
       to: {transform: "translate(0, 0)", opacity: .3},
     }
   );
 
+  const boxAnim = useSpring({
+    from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
+    to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
+    delay: 1300,
+    config: {       
+      mass: 5,
+      tension: 180,
+      friction: 45,
+    }
+  })
+
+  console.log(textPos);
+  console.log(boxAnim);
+
   return (
   <div className="TitleCard">
-    <div className="HelloText">
-      <div className="HelloContainer">
+    <div className="HelloText"> 
+      <div className="HelloContainer">       
+        <animated.div className="TextHighlight" style={boxAnim}></animated.div>
         <animated.h1 className="HelloName" style={textPos}>
           Hello<animated.span style={nameReveal}>, I'm Siddhi</animated.span>
         </animated.h1>
@@ -119,6 +142,7 @@ function TitleCard() {
         )}
       </h2>
     </div>
+    <animated.div className="Test" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0)", "translate(-50vw, 0)"] })}}>Test</animated.div>
   </div>
   )
 };

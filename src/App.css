@@ -1,52 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
 body {
   margin-top:0;
   padding: 0;
-  background-color: #f2ebeb;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: #070707;
 }
 
 .TitleCard {
   display: flex;
-  position: relative;
   height: 100vh;
   width: 100%;
+  user-select: none;
+  background-color: #ebebeb;
+}
+
+.Content1 {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  user-select: none;
+  background-color: #e04b4b;
+}
+
+.HelloText {
+  position: relative;
 }
 
 @media (orientation: landscape) {
   .HelloText {
     margin: 5% 45% 4% 5%;
+    height: fit-content;
   }
 }
 
 @media (orientation: portrait) {
   .HelloText {
-    margin: 5% 5% 4% 5%;
+    margin: 10% 10% 10% 10%;
   }
 }
 
 .HelloName {
   font-size: calc(45px + 2vw);
-  font-weight: 900;
+  font-weight: 700;
   width: fit-content;
   margin: 0 0 .2em 0;
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 .HelloContainer {
-  overflow: hidden;
+  position: relative;
 }
 
 .WorkSkill {
-  font-size: calc(20px + 1vw);
-  font-weight: 500;
+  font-size: calc(16px + 1.5vw);
+  font-weight: 400;
   margin: .01em 0 .01em 0;
   overflow: hidden;
-  height: 1.3em;
+  height: 1.2em;
 }
 
 .SkillList {
   width: fit-content;
   display: inline-flex;
   white-space:pre;
+}
+
+.TextHighlight {
+  box-sizing: border-box;
+  position: absolute;
+  top: -3%;
+  background-color: #070707;
+}
+
+.Test {
+  font-size: 45px;
+  position: relative;
+  top: 55vh;
 }
