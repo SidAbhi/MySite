@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  margin-top:0;
+  padding: 0;
+  background-color: #f2ebeb;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.TitleCard {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+@media (orientation: landscape) {
+  .HelloText {
+    margin: 5% 45% 4% 5%;
+  }
+}
+
+@media (orientation: portrait) {
+  .HelloText {
+    margin: 5% 5% 4% 5%;
+  }
+}
+
+.HelloName {
+  font-size: calc(45px + 2vw);
+  font-weight: 900;
+  width: fit-content;
+  margin: 0 0 .2em 0;
+}
+
+.HelloContainer {
+  overflow: hidden;
+}
+
+.WorkSkill {
+  font-size: calc(20px + 1vw);
+  font-weight: 500;
+  margin: .01em 0 .01em 0;
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.SkillList {
+  width: fit-content;
+  display: inline-flex;
+  white-space:pre;
+}

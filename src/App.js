@@ -1,10 +1,12 @@
-import React from "react"
+import React from "react";
+import TitleCard from "./component/TitleCard";
 
 function App() {
-    return (<div>
-        <h2>Welcome to React App</h2>
-        <h3>Date : {new Date().toDateString()}</h3>
-    </div>)
-}
+    return (
+    <div className="Main">
+      <TitleCard/>
+    </div>
+    )
+};
 
-export default App
+export default App;
