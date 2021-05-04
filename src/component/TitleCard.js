@@ -69,7 +69,7 @@ function TitleCard() {
         tension: 790,
         friction: 70,
       },
-      delay: 2100,
+      delay: 1400,
       from: {transform: "translate(0, 5em)"}, 
       to: {transform: "translate(0, 0)"},
     }
@@ -83,7 +83,7 @@ function TitleCard() {
         tension: 790,
         friction: 77,
       },
-      delay: 2300,
+      delay: 1600,
       from: {transform: "translate(0, 5em)", opacity: 1}, 
       to: {transform: "translate(0, 0)", opacity: .6},
     }
@@ -97,7 +97,7 @@ function TitleCard() {
         tension: 810,
         friction: 82,
       },
-      delay: 2500,
+      delay: 1800,
       from: {transform: "translate(0, 5em)", opacity: 1}, 
       to: {transform: "translate(0, 0)", opacity: .3},
     }
@@ -106,10 +106,10 @@ function TitleCard() {
   const boxAnim = useSpring({
     from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
     to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
-    delay: 1300,
+    delay: 1200,
     config: {       
-      mass: 5,
-      tension: 180,
+      mass: 2,
+      tension: 280,
       friction: 45,
     }
   })
@@ -142,7 +142,10 @@ function TitleCard() {
         )}
       </h2>
     </div>
-    <animated.div className="Test" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0)", "translate(-50vw, 0)"] })}}>Test</animated.div>
+    <div className="TransitionContainer">
+      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -200vh) rotate(-60deg)"] })}}></animated.div>
+      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -200vh) rotate(60deg)"] })}}></animated.div>
+    </div>
   </div>
   )
 };
