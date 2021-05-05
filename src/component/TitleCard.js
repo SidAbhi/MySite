@@ -13,6 +13,14 @@ function TitleCard() {
           return 400;
       };
   };
+
+  const scrollThresh2 = () => {
+      if(mediaQ) {
+          return 300;
+      } else {
+          return 400;
+      };
+  };
   
   const [scrollVal, api] = useSpring(() => ({scroll: 0}));
 
@@ -85,7 +93,7 @@ function TitleCard() {
       },
       delay: 1600,
       from: {transform: "translate(0, 5em)", opacity: 1}, 
-      to: {transform: "translate(0, 0)", opacity: .6},
+      to: {transform: "translate(0, 0)", opacity: .8},
     }
   );
   
@@ -99,28 +107,81 @@ function TitleCard() {
       },
       delay: 1800,
       from: {transform: "translate(0, 5em)", opacity: 1}, 
-      to: {transform: "translate(0, 0)", opacity: .3},
+      to: {transform: "translate(0, 0)", opacity: .6},
     }
   );
 
   const boxAnim = useSpring({
     from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
     to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
-    delay: 1200,
+    delay: 1230,
     config: {       
       mass: 2,
       tension: 280,
       friction: 45,
     }
+  });
+
+  const boxAnim2 = useSpring({
+    from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
+    to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
+    delay: 1130,
+    config: {       
+      mass: 2,
+      tension: 300,
+      friction: 45,
+    }
+  });
+
+  const { stroke } = useSpring({
+    from: { stroke: 0 },
+    stroke: 1,
+    delay: 2500,
+    config: {       
+      mass: 1,
+      tension: 35,
+      friction: 45,
+    }
   })
 
-  console.log(textPos);
-  console.log(boxAnim);
+  const { fillColor } = useSpring({
+    from: {fillColor: "#ebebeb"},
+    fillColor: "#070707",
+    delay: 3500,
+    config: {       
+      mass: 1,
+      tension: 55,
+      friction: 15,
+    }
+  });
+
+  const orbit = useSpring({
+    from: { transform: mediaQ ? "rotate(70deg)" : "rotate(0deg)"},
+    to: { transform:  mediaQ ? "rotate(430deg)" : "rotate(360deg)"},
+    loop: true,
+    config: {
+      weight: 25,
+      tension: 0.05,
+      friction: 1,
+    }
+  });
+
+  const rotation = useSpring({
+    from: { transform: mediaQ ? "rotate(90deg)" : "rotate(0deg)"},
+    to: { transform:  mediaQ ? "rotate(450deg)" : "rotate(360deg)"},
+    loop: true,
+    config: {
+      weight: 25,
+      tension: 0.02,
+      friction: 1,
+    }
+  });
 
   return (
   <div className="TitleCard">
     <div className="HelloText"> 
       <div className="HelloContainer">       
+        <animated.div className="TextHighlight2" style={boxAnim2}></animated.div>
         <animated.div className="TextHighlight" style={boxAnim}></animated.div>
         <animated.h1 className="HelloName" style={textPos}>
           Hello<animated.span style={nameReveal}>, I'm Siddhi</animated.span>
@@ -143,8 +204,27 @@ function TitleCard() {
       </h2>
     </div>
     <div className="TransitionContainer">
-      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -200vh) rotate(-60deg)"] })}}></animated.div>
-      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -200vh) rotate(60deg)"] })}}></animated.div>
+      <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
+        <title>Orbit</title>
+        <circle cx="430" cy="408" r="405.5" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
+        <circle cx="24.5" cy="416.5" r="24.5" fill="#070707"/>
+      </animated.svg>
+      <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
+        <path d="M729.1,616.4l14-2.5L734,603l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L734,477l9.1-10.9-14-2.5,28.3-49.1H700.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V352.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L540,288.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H322.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L323.9,540l12.3,7.1-43.5,36.5L346.1,603l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L540,791.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V712.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" transform="translate(-110 -132)" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="1.4"/>
+      </animated.svg>
+      <animated.svg 
+        className="ScrollArrow" 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 902.2 989.4"
+        strokeDasharray = {6156}
+        strokeDashoffset = {stroke.to(stroke => (1 - stroke) * 6256)}
+        style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh2() / 32 , scrollThresh2() /4], output: ["translate(0%, 0%) rotate(0deg)", "translate(0%, 0%) rotate(180deg)", "translate(0%, -200%) rotate(180deg)"] })}}
+      >
+        <title>Arrow</title>
+        <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#070707" strokeMiterlimit="10" strokeWidth="27"/>
+      </animated.svg>
+      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -170vh) rotate(-60deg)"] })}}></animated.div>
+      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -170vh) rotate(60deg)"] })}}></animated.div>
     </div>
   </div>
   )
