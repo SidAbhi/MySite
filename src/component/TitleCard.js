@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSpring, animated, useTrail } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
+import "../stylesheets/TitleCard.css"
+
 
 function TitleCard() {
   const mediaQ = useMediaQuery({ query: '(max-aspect-ratio: 1/1)' });
@@ -160,9 +162,7 @@ function TitleCard() {
     to: { transform:  mediaQ ? "rotate(430deg)" : "rotate(360deg)"},
     loop: true,
     config: {
-      weight: 25,
-      tension: 0.05,
-      friction: 1,
+      duration: 127000,
     }
   });
 
@@ -171,9 +171,7 @@ function TitleCard() {
     to: { transform:  mediaQ ? "rotate(450deg)" : "rotate(360deg)"},
     loop: true,
     config: {
-      weight: 25,
-      tension: 0.02,
-      friction: 1,
+      duration: 45000,
     }
   });
 
@@ -204,14 +202,18 @@ function TitleCard() {
       </h2>
     </div>
     <div className="TransitionContainer">
-      <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
-        <title>Orbit</title>
-        <circle cx="430" cy="408" r="405.5" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
-        <circle cx="24.5" cy="416.5" r="24.5" fill="#070707"/>
-      </animated.svg>
-      <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
-        <path d="M729.1,616.4l14-2.5L734,603l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L734,477l9.1-10.9-14-2.5,28.3-49.1H700.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V352.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L540,288.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H322.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L323.9,540l12.3,7.1-43.5,36.5L346.1,603l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L540,791.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V712.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" transform="translate(-110 -132)" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="1.4"/>
-      </animated.svg>
+      <animated.div className="OrbitContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh)", "translate(0vw, 110vh)"] })}}>
+        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["rotate(0deg)", "rotate(120deg)"] })}}>
+          <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
+            <title>Orbit</title>
+            <circle cx="430" cy="408" r="405.5" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
+            <circle cx="24.5" cy="416.5" r="24.5" fill="#070707"/>
+          </animated.svg>
+          <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
+            <path d="M729.1,616.4l14-2.5L734,603l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L734,477l9.1-10.9-14-2.5,28.3-49.1H700.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V352.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L540,288.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H322.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L323.9,540l12.3,7.1-43.5,36.5L346.1,603l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L540,791.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V712.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" transform="translate(-110 -132)" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="1.4"/>
+        </animated.svg>
+        </animated.div>
+      </animated.div>
       <animated.svg 
         className="ScrollArrow" 
         xmlns="http://www.w3.org/2000/svg" 

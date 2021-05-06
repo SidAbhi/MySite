@@ -1,0 +1,46 @@
+
+.About {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  user-select: none;
+  background-color: #e04b4b;
+}
+
+.AboutMeTitle {
+  font-size: calc(35px + 1.9vw);
+  /* color: #e04b4b */
+  font-weight: 600;
+  width: fit-content;
+  height: fit-content;
+}
+
+.AboutMeContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 15% auto 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+@media (orientation: landscape) {
+  .AboutMe {
+    margin: 10% auto 0 auto;
+  }
+
+  .AboutMeContent {
+    width: 60%;
+  }
+}
+
+@media (orientation: portrait) {
+  .AboutMe {
+    margin: 17% auto 0 auto;
+  }
+
+  .AboutMeContent {
+    width: 85%;
+  }
+}
