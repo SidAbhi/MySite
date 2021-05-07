@@ -9,8 +9,9 @@ module.exports = {
  },
   // webpack 5 comes with devServer which loads in development mode
  devServer: {
-   port: 3000,
-   watchContentBase: true
+  host: '0.0.0.0',
+  port: 3000,
+  watchContentBase: true
  },
   // Rules of how webpack will take our files, complie & bundle them for the browser 
  module: {

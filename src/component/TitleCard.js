@@ -2,33 +2,24 @@ import React from "react";
 import { useSpring, animated, useTrail } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
+import useWindowDimensions from "./GetWindowDimensions"
 import "../stylesheets/TitleCard.css"
 
 
 function TitleCard() {
+  const windowDimensions = useWindowDimensions();
+
   const mediaQ = useMediaQuery({ query: '(max-aspect-ratio: 1/1)' });
 
-  const scrollThresh = () => {
-      if(mediaQ) {
-          return 650;
-      } else {
-          return 400;
-      };
-  };
+  const scrollThresh = windowDimensions.height;
 
-  const scrollThresh2 = () => {
-      if(mediaQ) {
-          return 300;
-      } else {
-          return 400;
-      };
-  };
+  console.log(scrollThresh);
   
   const [scrollVal, api] = useSpring(() => ({scroll: 0}));
 
   useScroll(({ xy: [, y] }) => 
     api.start({
-      scroll: Math.min(Math.max(parseInt(y), 0), scrollThresh()),
+      scroll: Math.min(Math.max(parseInt(y), 0), scrollThresh),
     }),
     { domTarget: window },
   );
@@ -94,8 +85,8 @@ function TitleCard() {
         friction: 77,
       },
       delay: 1600,
-      from: {transform: "translate(0, 5em)", opacity: 1}, 
-      to: {transform: "translate(0, 0)", opacity: .8},
+      from: {transform: "translate(0, 5em)"}, 
+      to: {transform: "translate(0, 0)"},
     }
   );
   
@@ -108,8 +99,8 @@ function TitleCard() {
         friction: 82,
       },
       delay: 1800,
-      from: {transform: "translate(0, 5em)", opacity: 1}, 
-      to: {transform: "translate(0, 0)", opacity: .6},
+      from: {transform: "translate(0, 5em)"}, 
+      to: {transform: "translate(0, 0)"},
     }
   );
 
@@ -147,8 +138,8 @@ function TitleCard() {
   })
 
   const { fillColor } = useSpring({
-    from: {fillColor: "#2D4459"},
-    fillColor: "#F2AA6B",
+    from: {fillColor: "#F2AA6B00"},
+    fillColor: "#F2AA6BFF",
     delay: 3500,
     config: {       
       mass: 1,
@@ -202,8 +193,8 @@ function TitleCard() {
       </h2>
     </div>
     <div className="TransitionContainer">
-      <animated.div className="OrbitContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh)", "translate(0vw, 110vh)"] })}}>
-        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
+      <animated.div className="OrbitContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh)", "translate(0vw, 110vh)"] })}}>
+        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
           <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
             <title>Orbit</title>
             <circle cx="430" cy="408" r="405.5" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
@@ -220,13 +211,13 @@ function TitleCard() {
         viewBox="0 0 902.2 989.4"
         strokeDasharray = {6156}
         strokeDashoffset = {stroke.to(stroke => (1 - stroke) * 6256)}
-        style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh2() / 32 , scrollThresh2() /4], output: ["translate(0%, 0%) rotate(0deg)", "translate(0%, 0%) rotate(180deg)", "translate(0%, -200%) rotate(180deg)"] })}}
+        style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh / 32 , scrollThresh /4], output: ["translate(0%, 0%) rotate(0deg)", "translate(0%, 0%) rotate(180deg)", "translate(0%, -200%) rotate(180deg)"] })}}
       >
         <title>Arrow</title>
         <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="27"/>
       </animated.svg>
-      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -170vh) rotate(-60deg)"] })}}></animated.div>
-      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -170vh) rotate(60deg)"] })}}></animated.div>
+      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -170vh) rotate(-60deg)"] })}}></animated.div>
+      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -170vh) rotate(60deg)"] })}}></animated.div>
     </div>
   </div>
   )

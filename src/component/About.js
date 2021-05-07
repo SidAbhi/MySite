@@ -9,7 +9,10 @@ function About () {
     <div className="About">
       <div className="AboutMeContainer">
         <h2 className="AboutMeTitle">ABOUT ME</h2>
-        <p className="AboutMeContent">Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, primarily focused on motion and layout design, I became interested in web and frontend development in the past couple of months. The primary draw of web design and frontend development for me is the interactivity and the UI/UX aspect, with the freedom to build and create experiences without the restrictions of traditional media.</p>
+        <div className="AboutMeContent">
+          <p>Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, primarily focused on motion and layout design, I became interested in web and frontend development in the past year. </p>
+          <p>The primary draw of web design and frontend development for me is the interactivity and the UI/UX aspect, with the freedom to design, build, and create experiences without the restrictions of traditional media.</p>
+        </div>
       </div>
     </div>
   );
