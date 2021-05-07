@@ -147,8 +147,8 @@ function TitleCard() {
   })
 
   const { fillColor } = useSpring({
-    from: {fillColor: "#ebebeb"},
-    fillColor: "#070707",
+    from: {fillColor: "#2D4459"},
+    fillColor: "#F2AA6B",
     delay: 3500,
     config: {       
       mass: 1,
@@ -203,14 +203,14 @@ function TitleCard() {
     </div>
     <div className="TransitionContainer">
       <animated.div className="OrbitContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh)", "translate(0vw, 110vh)"] })}}>
-        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["rotate(0deg)", "rotate(120deg)"] })}}>
+        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
           <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
             <title>Orbit</title>
-            <circle cx="430" cy="408" r="405.5" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
-            <circle cx="24.5" cy="416.5" r="24.5" fill="#070707"/>
+            <circle cx="430" cy="408" r="405.5" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
+            <circle cx="24.5" cy="416.5" r="24.5" fill="#F2AA6B"/>
           </animated.svg>
           <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
-            <path d="M729.1,616.4l14-2.5L734,603l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L734,477l9.1-10.9-14-2.5,28.3-49.1H700.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V352.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L540,288.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H322.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L323.9,540l12.3,7.1-43.5,36.5L346.1,603l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L540,791.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V712.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" transform="translate(-110 -132)" fill="none" stroke="#070707" strokeMiterlimit="10" strokeWidth="1.4"/>
+            <path d="M729.1,616.4l14-2.5L734,603l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L734,477l9.1-10.9-14-2.5,28.3-49.1H700.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V352.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L540,288.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H322.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L323.9,540l12.3,7.1-43.5,36.5L346.1,603l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L540,791.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V712.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" transform="translate(-110 -132)" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="1.4"/>
         </animated.svg>
         </animated.div>
       </animated.div>
@@ -223,7 +223,7 @@ function TitleCard() {
         style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh2() / 32 , scrollThresh2() /4], output: ["translate(0%, 0%) rotate(0deg)", "translate(0%, 0%) rotate(180deg)", "translate(0%, -200%) rotate(180deg)"] })}}
       >
         <title>Arrow</title>
-        <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#070707" strokeMiterlimit="10" strokeWidth="27"/>
+        <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="27"/>
       </animated.svg>
       <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -170vh) rotate(-60deg)"] })}}></animated.div>
       <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh() + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -170vh) rotate(60deg)"] })}}></animated.div>

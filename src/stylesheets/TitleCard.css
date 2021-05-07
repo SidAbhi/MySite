@@ -4,7 +4,8 @@
   height: 100vh;
   width: 100%;
   user-select: none;
-  background-color: #ebebeb;
+  background-color: #2D4459;
+  color: #F2AA6B;
 }
 
 .HelloText {
@@ -46,6 +47,7 @@
   margin: 0 0 .2em 0;
   filter: invert(1);
   mix-blend-mode: difference;
+  color: hsl(209, 100%, 13%);
 }
 
 .HelloContainer {
@@ -70,14 +72,14 @@
   box-sizing: border-box;
   position: absolute;
   top: -3%;
-  background-color: #070707;
+  background-color: #F2AA6B;
 }
 
 .TextHighlight2 {
   box-sizing: border-box;
   position: absolute;
   top: -3%;
-  background-color: #836060;
+  background-color: #A66B38;
 }
 
 .TransitionContainer {

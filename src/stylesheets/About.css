@@ -1,9 +1,8 @@
 
 .About {
   display: flex;
-  height: 100vh;
+  height: 125vh;
   width: 100%;
-  user-select: none;
   background-color: #e04b4b;
 }
 
@@ -15,6 +14,16 @@
   height: fit-content;
 }
 
+.AboutMeContent {
+  font-size: calc(12px + .8vw)  ;
+  /* color: #e04b4b */
+  font-weight: 400;
+  width: 85%;
+  height: fit-content;
+  line-height: 1.7;
+}
+
+
 .AboutMeContainer {
   position: absolute;
   left: 0;
@@ -22,7 +31,6 @@
   margin: 15% auto 0 auto;
   width: 90%;
   display: grid;
-  grid-template-columns: 2fr 3fr;
 }
 
 @media (orientation: landscape) {
@@ -30,8 +38,10 @@
     margin: 10% auto 0 auto;
   }
 
-  .AboutMeContent {
-    width: 60%;
+  .AboutMeContainer {
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    justify-items: center;
   }
 }
 
@@ -41,6 +51,11 @@
   }
 
   .AboutMeContent {
-    width: 85%;
+    text-align: center;
+  }
+
+  .AboutMeContainer {
+    align-items: center;
+    justify-items: center;
   }
 }

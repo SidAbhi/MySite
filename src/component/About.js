@@ -8,8 +8,8 @@ function About () {
   return(
     <div className="About">
       <div className="AboutMeContainer">
-        <h1 className="AboutMeTitle">ABOUT ME</h1>
-        <p className="AboutMeContent">Hello. I'm Siddhi, a longtime graphic designer who became interested in web design and frontend development</p>
+        <h2 className="AboutMeTitle">ABOUT ME</h2>
+        <p className="AboutMeContent">Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, primarily focused on motion and layout design, I became interested in web and frontend development in the past couple of months. The primary draw of web design and frontend development for me is the interactivity and the UI/UX aspect, with the freedom to build and create experiences without the restrictions of traditional media.</p>
       </div>
     </div>
   );
