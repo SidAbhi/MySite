@@ -34,15 +34,12 @@
   margin: 0 auto 0 auto;
   height: 125vh;
   width: 90%;
-  display: grid;
 }
 
 @media (orientation: landscape) {
-  .AboutMe {
-    margin: 10% auto 0 auto;
-  }
 
   .AboutMeContainer {
+    display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;
     justify-items: center;
@@ -50,16 +47,20 @@
 }
 
 @media (orientation: portrait) {
-  .AboutMe {
-    margin: 17% auto 0 auto;
+  .AboutMeContainer {
+    height: fit-content;
+    align-self: center;
+  }
+
+  .AboutMeTitle {
+    margin: 0 auto 1em auto;
+    text-align: center;
   }
 
   .AboutMeContent {
     text-align: center;
+    justify-self: center;
+    margin: auto;
   }
 
-  .AboutMeContainer {
-    align-items: center;
-    justify-items: center;
-  }
 }
