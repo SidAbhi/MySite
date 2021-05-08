@@ -1,7 +1,7 @@
 
 .About {
   display: flex;
-  height: 125vh;
+  height: 200vh;
   width: 100%;
   background-color: #DADDD1;
   color: #2D4459;
@@ -31,25 +31,34 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto 0 auto;
-  height: 125vh;
+  margin: 25vh auto 0 auto;
+  height: 140vh;
   width: 90%;
 }
 
-@media (orientation: landscape) {
+.AboutMeSticky {
+  position: sticky;
+  width: 100%;
+  height: fit-content;
+}
 
-  .AboutMeContainer {
+@media (orientation: landscape) {
+  .AboutMeSticky {
+    top: 30vh;
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;
     justify-items: center;
   }
+
+  .AboutMeTitle {
+    text-align: center;
+  }
 }
 
 @media (orientation: portrait) {
-  .AboutMeContainer {
-    height: fit-content;
-    align-self: center;
+  .AboutMeSticky {
+    top:20vh;
   }
 
   .AboutMeTitle {
@@ -62,5 +71,4 @@
     justify-self: center;
     margin: auto;
   }
-
 }

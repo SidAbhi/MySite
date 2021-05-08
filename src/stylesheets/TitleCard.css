@@ -8,6 +8,7 @@
   color: #F2AA6B;
   margin: 0;
   padding:0;
+  overflow: hidden;
 }
 
 .HelloText {
@@ -109,8 +110,8 @@
 }
 
 .ScrollArrow {
-  width: 8vh;
-  height: 8vh;
+  width: 6vh;
+  height: 6vh;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
