@@ -12,10 +12,16 @@
 
 .AboutMeTitle {
   font-size: calc(35px + 1.9vw);
-  /* color: #DADDD1 */
+  /* color: #DADDD1; */
   font-weight: 600;
   width: fit-content;
   height: fit-content;
+}
+
+.AboutMeTitleContainer {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
 }
 
 .AboutMeContent {
@@ -68,20 +74,11 @@
     align-items: center;
     justify-items: center;
   }
-
-  .AboutMeTitle {
-    text-align: center;
-  }
 }
 
 @media (orientation: portrait) {
   .AboutMeSticky {
     top:10vh;
-  }
-
-  .AboutMeTitle {
-    margin: 0 auto .4em auto;
-    text-align: center;
   }
 
   .AboutMeContent {

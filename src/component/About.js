@@ -29,7 +29,9 @@ function About () {
     <div className="About">
       <div className="AboutMeContainer">
         <div className="AboutMeSticky">
-          <h2 className="AboutMeTitle">ABOUT ME</h2>
+          <div className="AboutMeTitleContainer">
+            <h2 className="AboutMeTitle">ABOUT ME</h2>
+          </div>
           <animated.div className="AboutMeContent">
             <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh*(2/10), scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output:  animationResp})}}>Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, I'm primarily focused on motion and layout design. I became interested in web and frontend development during the pandemic.</animated.p>
             <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output: animationResp2 })}}>Whatt I enjoy the most about web development is the freedom to design and build without the restrictions of traditional media. Creating new ways to convey information through interactivity.</animated.p>
