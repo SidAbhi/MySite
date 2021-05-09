@@ -7,6 +7,7 @@
   color: #2D4459;
   margin: 0;
   padding: 0;
+  overflow: visible;
 }
 
 .AboutMeTitle {
@@ -24,6 +25,7 @@
   width: 85%;
   height: fit-content;
   line-height: 1.7;
+  overflow: hidden;
 }
 
 
@@ -31,8 +33,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  margin: 25vh auto 0 auto;
-  height: 140vh;
+  margin: 0 auto 0 auto;
+  height: 160vh;
   width: 90%;
 }
 
@@ -40,6 +42,22 @@
   position: sticky;
   width: 100%;
   height: fit-content;
+}
+
+.AboutTransitionContainer {
+  overflow: hidden;
+  height: 200vh;
+  width: 100%;
+  position: absolute;
+}
+
+.AboutTransition {
+  position: absolute;
+  width: 300%;
+  height: 100vh;
+  top: 100%;
+  left: -50%;
+  background-color: #2D4459;
 }
 
 @media (orientation: landscape) {
@@ -58,11 +76,11 @@
 
 @media (orientation: portrait) {
   .AboutMeSticky {
-    top:20vh;
+    top:10vh;
   }
 
   .AboutMeTitle {
-    margin: 0 auto 1em auto;
+    margin: 0 auto .4em auto;
     text-align: center;
   }
 

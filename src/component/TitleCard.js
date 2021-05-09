@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSpring, animated, useTrail } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
@@ -12,8 +12,6 @@ function TitleCard() {
   const mediaQ = useMediaQuery({ query: '(max-aspect-ratio: 1/1)' });
 
   const scrollThresh = windowDimensions.height;
-
-  console.log(scrollThresh);
   
   const [scrollVal, api] = useSpring(() => ({scroll: 0}));
 
@@ -23,8 +21,11 @@ function TitleCard() {
     }),
     { domTarget: window },
   );
-  
+
+  let [textPosFin, setTextPosFin] = useState(false);
+
   const textPos = useSpring({
+    cancel: textPosFin,
     from: {
       transform: "translate(15vw, -30vh)",
     },
@@ -39,6 +40,7 @@ function TitleCard() {
       {transform: "translate(0, 0)", delay: 400},
     ],
     delay: 100,
+    onRest: () => setTextPosFin(true),
     config: {
       mass: 3,
       tension: 180,
