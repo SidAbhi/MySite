@@ -1,7 +1,7 @@
 
 .About {
   display: flex;
-  height: 200vh;
+  height: 200%;
   width: 100%;
   background-color: #DADDD1;
   color: #2D4459;
@@ -46,7 +46,7 @@
   left: 0;
   right: 0;
   margin: 0 auto 0 auto;
-  height: 160vh;
+  height: 160%;
   width: 90%;
 }
 
@@ -58,7 +58,7 @@
 
 .AboutTransitionContainer {
   overflow: hidden;
-  height: 200vh;
+  height: 200%;
   width: 100%;
   position: absolute;
 }
@@ -66,7 +66,7 @@
 .AboutTransition {
   position: absolute;
   width: 300%;
-  height: 100vh;
+  height: 100%;
   top: 100%;
   left: -50%;
   background-color: #2D4459;
@@ -91,7 +91,7 @@
 
 @media (orientation: landscape) {
   .AboutMeSticky {
-    top: 30vh;
+    top: 30%;
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;
@@ -101,7 +101,7 @@
 
 @media (orientation: portrait) {
   .AboutMeSticky {
-    top:10vh;
+    top:10%;
   }
 
   .AboutMeContent {

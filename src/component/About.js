@@ -37,7 +37,7 @@ function About () {
           style = {{
             transform: scrollVal.scroll.to({ 
               range: [0, scrollThresh * (2/3), scrollThresh + 1], 
-              output: ["translate(0vw, 0vh) rotate(2deg)", "translate(0vw, 0vh) rotate(2deg)", "translate(0vw, -40vh) rotate(8deg)"]
+              output: ["translate(0vw, 0vh) rotate(2deg)", "translate(0vw, 0vh) rotate(2deg)", "translate(0vw, -40%) rotate(8deg)"]
             })
           }}
         />

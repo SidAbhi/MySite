@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+// import { useMediaQuery } from "react-responsive";
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
+
+  const { outerWidth: width, outerHeight: height } = window;
+
   return {
     width,
     height
@@ -11,14 +14,21 @@ function getWindowDimensions() {
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
+  // let isLandscape = useMediaQuery({ query: "(max-device-width: 640px) and (orientation: landscape)" });
+  // let isPortrait = useMediaQuery({ query: "(max-device-width: 480px) and (orientation: portrait)" });
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // const mediaQ = (isLandscape === true | isPortrait === true) ? true : false;
+
+  // if (mediaQ===false) {
+  //   useEffect(() => {
+  //     function handleResize() {
+  //       setWindowDimensions(getWindowDimensions());
+  //     }
+
+  //     window.addEventListener('resize', handleResize);
+  //     return () => window.removeEventListener('resize', handleResize);
+  //   }, []);
+  // }
 
   return windowDimensions;
 }
