@@ -14,24 +14,30 @@
   font-size: calc(35px + 1.9vw);
   /* color: #DADDD1; */
   font-weight: 600;
+  margin: 0 auto 0 auto;
   width: fit-content;
   height: fit-content;
+  align-self: center;
 }
 
 .AboutMeTitleContainer {
   width: fit-content;
   height: fit-content;
-  position: relative;
+  align-self: center;
+  justify-self: center;
+  position:relative;
+  margin: 0 auto 0 auto;
 }
 
 .AboutMeContent {
   font-size: calc(12px + .8vw)  ;
+  position: relative;
   /* color: #DADDD1 */
   font-weight: 400;
   width: 85%;
   height: fit-content;
   line-height: 1.7;
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -66,6 +72,14 @@
   background-color: #2D4459;
 }
 
+.QuoteBox {
+  width: 108%;
+  height: 108%;
+  position: absolute;
+  left: -4%;
+  top: -4%;
+}
+
 @media (orientation: landscape) {
   .AboutMeSticky {
     top: 30vh;
@@ -84,6 +98,6 @@
   .AboutMeContent {
     text-align: center;
     justify-self: center;
-    margin: auto;
+    margin: 2.5em auto 0 auto;
   }
 }

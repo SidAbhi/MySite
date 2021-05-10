@@ -9,6 +9,8 @@ import "../stylesheets/TitleCard.css"
 function TitleCard() {
   const windowDimensions = useWindowDimensions();
 
+  let [animStop, setAnimStop] = useState(false);
+
   const mediaQ = useMediaQuery({ query: '(max-aspect-ratio: 1/1)' });
 
   const scrollThresh = windowDimensions.height;
@@ -22,10 +24,8 @@ function TitleCard() {
     { domTarget: window },
   );
 
-  let [textPosFin, setTextPosFin] = useState(false);
-
   const textPos = useSpring({
-    cancel: textPosFin,
+    cancel: animStop,
     from: {
       transform: "translate(15vw, -30vh)",
     },
@@ -39,8 +39,8 @@ function TitleCard() {
       }},
       {transform: "translate(0, 0)", delay: 400},
     ],
+    onRest: ()=>setAnimStop(true),
     delay: 100,
-    onRest: () => setTextPosFin(true),
     config: {
       mass: 3,
       tension: 180,
@@ -131,7 +131,7 @@ function TitleCard() {
   const { stroke } = useSpring({
     from: { stroke: 0 },
     stroke: 1,
-    delay: 2500,
+    delay: 1500,
     config: {       
       mass: 1,
       tension: 35,
@@ -142,7 +142,7 @@ function TitleCard() {
   const { fillColor } = useSpring({
     from: {fillColor: "#F2AA6B00"},
     fillColor: "#F2AA6BFF",
-    delay: 3500,
+    delay: 2500,
     config: {       
       mass: 1,
       tension: 55,
