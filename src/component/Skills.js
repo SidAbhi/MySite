@@ -7,6 +7,13 @@ import "../stylesheets/Skills.css"
 function Skills () {
   return(
     <div className="Skills">
+      <div className="SkillsContainer">
+        <h2 className="SkillsTitle">
+          SKILLS
+        </h2>
+        <div className="SkillLists">
+        </div>
+      </div>
     </div>
   );
 };

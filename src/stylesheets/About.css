@@ -12,12 +12,13 @@
 
 .AboutMeTitle {
   font-size: calc(35px + 1.9vw);
-  /* color: #DADDD1; */
   font-weight: 600;
   margin: 0 auto 0 auto;
   width: fit-content;
   height: fit-content;
   align-self: center;
+  position: relative;
+  z-index: 3;
 }
 
 .AboutMeTitleContainer {
@@ -37,7 +38,6 @@
   width: 85%;
   height: fit-content;
   line-height: 1.7;
-  overflow: visible;
 }
 
 
@@ -78,6 +78,15 @@
   position: absolute;
   left: -4%;
   top: -4%;
+}
+
+.AboutTitleBox {
+  width: 115%;
+  height: 125%;
+  position: absolute;
+  left: -6%;
+  top: -12.5%;
+  z-index: 1;
 }
 
 @media (orientation: landscape) {

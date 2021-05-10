@@ -1,5 +1,24 @@
 .Skills {
   width: 100%;
-  height: 100vh;
+  height: 500vh;
   background-color: #2D4459;
+  margin: 0;
+}
+
+.SkillsContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 20vh auto 0 auto;
+  width: 90%;
+}
+
+.SkillsTitle {
+  height: fit-content;
+  width: fit-content;
+  justify-self: center;
+  align-self: center;
+  font-size: calc(45px + 2.1vw);
+  margin: 0 auto 0 auto;
+  font-weight: 600;
 }

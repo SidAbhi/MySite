@@ -4,6 +4,7 @@ import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
 import useWindowDimensions from "./GetWindowDimensions";
 import AboutContent from "./AboutContent";
+import AboutTitleBox from "./AboutTitleBox";
 import "../stylesheets/About.css";
 
 function About () {
@@ -26,9 +27,7 @@ function About () {
     <div className="About">
       <div className="AboutMeContainer">
         <div className="AboutMeSticky">
-          <div className="AboutMeTitleContainer">
-            <h2 className="AboutMeTitle">ABOUT ME</h2>
-          </div>
+          <AboutTitleBox/>
           <AboutContent/>
         </div>
       </div>
