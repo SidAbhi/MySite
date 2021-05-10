@@ -31,7 +31,7 @@ function AboutTitleBox () {
         strokeDasharray = {300}
         strokeDashoffset = {
           scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (1/10), scrollThresh * (3/10), scrollThresh + 1], 
+            range: [0, scrollThresh * (1/20), scrollThresh * (2/10), scrollThresh + 1], 
             output: [-300, -300, 0, 0]
           })
         }
@@ -42,13 +42,26 @@ function AboutTitleBox () {
         style={{
           backgroundColor: "#DADDD1",
           position: "absolute",
-          width: "120%",
+          width: scrollVal.scroll.to({ 
+            range: [0, scrollThresh * (1.9/10), scrollThresh * (3/10), scrollThresh + 1], 
+            output: ["0%", "0%", "120%", "120%"]
+          }),
           height: "100%",
           zIndex: "2",
           left: "-10%"
         }}
       />          
-      <animated.h2 className="AboutMeTitle">ABOUT ME</animated.h2>
+      <animated.h2 
+        className="AboutMeTitle" 
+        style={{
+          opacity: scrollVal.scroll.to({ 
+            range: [0, scrollThresh * (2.5/10), scrollThresh * (4/10), scrollThresh + 1], 
+            output: ["0", "0", "1", "1"]
+          })
+        }}
+      >
+        ABOUT ME
+      </animated.h2>
     </div>
   );
 };
