@@ -1,14 +1,10 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import { useMediaQuery } from "react-responsive";
 import useWindowDimensions from "./GetWindowDimensions";
-import "../stylesheets/About.css";
 
 function AboutTitleBox () {
   const windowDimensions = useWindowDimensions();
-
-  const mediaQ = useMediaQuery({ query: '(orientation: landscape)' });
 
   const scrollThresh = windowDimensions.height * 3;
     
@@ -43,19 +39,20 @@ function AboutTitleBox () {
           backgroundColor: "#DADDD1",
           position: "absolute",
           width: scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (1.9/10), scrollThresh * (3/10), scrollThresh + 1], 
-            output: ["0%", "0%", "120%", "120%"]
+            range: [0, scrollThresh * (2/10), scrollThresh * (3/10), scrollThresh + 1], 
+            output: ["0%", "0%", "122%", "122%"]
           }),
           height: "100%",
           zIndex: "2",
-          left: "-10%"
+          left: "-11%",
+          transform: "skew(-21deg)"
         }}
-      />          
+      />              
       <animated.h2 
         className="AboutMeTitle" 
         style={{
           opacity: scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (2.5/10), scrollThresh * (4/10), scrollThresh + 1], 
+            range: [0, scrollThresh * (2.7/10), scrollThresh * (3.5/10), scrollThresh + 1], 
             output: ["0", "0", "1", "1"]
           })
         }}

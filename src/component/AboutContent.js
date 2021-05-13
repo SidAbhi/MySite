@@ -3,7 +3,6 @@ import { useSpring, animated } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
 import useWindowDimensions from "./GetWindowDimensions";
-import "../stylesheets/About.css";
 
 function AboutContent () {
   const windowDimensions = useWindowDimensions();

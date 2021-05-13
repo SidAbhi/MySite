@@ -17,7 +17,7 @@ export default function useWindowDimensions() {
   // let isLandscape = useMediaQuery({ query: "(max-device-width: 640px) and (orientation: landscape)" });
   // let isPortrait = useMediaQuery({ query: "(max-device-width: 480px) and (orientation: portrait)" });
 
-  // const mediaQ = (isLandscape === true | isPortrait === true) ? true : false;
+  // const mediaQ = (isLandscape === true || isPortrait === true) ? true : false;
 
   // if (mediaQ===false) {
   //   useEffect(() => {

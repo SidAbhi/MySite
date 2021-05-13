@@ -6,12 +6,14 @@ import "../stylesheets/Skills.css"
 
 function Skills () {
   return(
-    <div className="Skills">
+    <div className="Skills zIndex5">
       <div className="SkillsContainer">
-        <h2 className="SkillsTitle">
-          SKILLS
-        </h2>
-        <div className="SkillLists">
+        <div className="SkillsSticky">
+          <h2 className="SkillsTitle">
+            SKILLS
+          </h2>
+          <div className="SkillLists">
+          </div>
         </div>
       </div>
     </div>

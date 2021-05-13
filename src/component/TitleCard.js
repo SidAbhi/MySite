@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useSpring, animated, useTrail } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
-import useWindowDimensions from "./GetWindowDimensions"
-import "../stylesheets/TitleCard.css"
+import useWindowDimensions from "./GetWindowDimensions";
+import TitleCardNameBG from "./TitleCardNameBG";
+import "../stylesheets/TitleCard.css";
 
 
 function TitleCard() {
@@ -170,6 +171,7 @@ function TitleCard() {
 
   return (
   <div className="TitleCard">
+    <TitleCardNameBG/>
     <div className="HelloText"> 
       <div className="HelloContainer">       
         <animated.div className="TextHighlight2" style={boxAnim2}></animated.div>

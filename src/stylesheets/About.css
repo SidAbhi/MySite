@@ -82,10 +82,10 @@
 
 .AboutTitleBox {
   width: 115%;
-  height: 125%;
+  height: 150%;
   position: absolute;
   left: -6%;
-  top: -12.5%;
+  top: -25%;
   z-index: 1;
 }
 

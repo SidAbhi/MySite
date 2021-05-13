@@ -3,6 +3,7 @@
   height: 500%;
   background-color: #2D4459;
   margin: 0;
+  position: relative;
 }
 
 .SkillsContainer {
@@ -11,6 +12,13 @@
   right: 0;
   margin: 20% auto 0 auto;
   width: 90%;
+  height: 90%;
+}
+
+.SkillsSticky {
+  position: sticky;
+  width: 100%;
+  height: fit-content;
 }
 
 .SkillsTitle {
@@ -21,4 +29,16 @@
   font-size: calc(45px + 2.1vw);
   margin: 0 auto 0 auto;
   font-weight: 600;
+}
+
+@media (orientation: landscape) {
+  .SkillsSticky {
+    top: 15%;
+  }
+}
+
+@media (orientation: portrait) {
+  .SkillsSticky {
+    top:10%;
+  }
 }

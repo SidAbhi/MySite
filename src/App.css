@@ -11,3 +11,43 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #F2AA6B;
 }
+
+.ZIndex0 {
+  z-index: 0;
+}
+
+.ZIndex1 {
+  z-index: 1;
+}
+
+.ZIndex2 {
+  z-index: 2;
+}
+
+.ZIndex3 {
+  z-index: 3;
+}
+
+.ZIndex4 {
+  z-index: 4;
+}
+
+.ZIndex5 {
+  z-index: 5;
+}
+
+.ZIndex6 {
+  z-index: 6;
+}
+
+.ZIndex7 {
+  z-index: 7;
+}
+
+.ZIndex8 {
+  z-index: 8;
+}
+
+.ZIndex9 {
+  z-index: 9;
+}
