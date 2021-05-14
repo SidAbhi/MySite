@@ -6,6 +6,7 @@ import useWindowDimensions from "./GetWindowDimensions";
 import AboutContent from "./AboutContent";
 import AboutTitleBox from "./AboutTitleBox";
 import "../stylesheets/About.css";
+import AboutBG from "./AboutBG";
 
 function About () {
   const windowDimensions = useWindowDimensions();
@@ -30,6 +31,9 @@ function About () {
           <AboutTitleBox/>
           <AboutContent/>
         </div>
+      </div>
+      <div className="AboutBGContainer">
+          <AboutBG/>
       </div>
       <div className="AboutTransitionContainer">
         <animated.div 
