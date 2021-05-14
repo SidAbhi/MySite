@@ -31,11 +31,11 @@ function AboutContent () {
         className="QuoteBox" 
         viewBox="0 0 760 760" 
         preserveAspectRatio="none"
-        strokeDasharray = {1600}
+        strokeDasharray = {1900}
         strokeDashoffset = {
           scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (2/10), scrollThresh * (2.5/5), scrollThresh + 1], 
-            output: [1600, 1300, 1100, 800]
+            range: [0, scrollThresh * (1.5/10), scrollThresh * (2.5/10), scrollThresh * (3/10), scrollThresh + 1], 
+            output: [1900, 1900, 1600, 1200, 600]
           })
         }
       >
