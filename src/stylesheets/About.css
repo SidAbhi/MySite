@@ -140,14 +140,14 @@
   }
 
   .AboutBG {
-    width: 50vw;
-    height: 50vw;
-    left: 25vw;
+    width: 70vw;
+    height: 70vw;
+    left: 15vw;
     top: 80vh;
   }
 
   .AboutBGCPU {
-    width: 50vw;
-    height: 50vw;
+    width: 75vw;
+    height: 75vw;
   }
 }
