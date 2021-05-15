@@ -10,7 +10,7 @@ $highlight-clr: #F2AA6B;
   position: relative;
 }
 
-.SkillsContainer {
+.Skills__container {
   position: absolute;
   left: 0;
   right: 0;
@@ -19,13 +19,13 @@ $highlight-clr: #F2AA6B;
   height: 90%;
 }
 
-.SkillsSticky {
+.Skills--sticky {
   position: sticky;
   width: 100%;
   height: fit-content;
 }
 
-.SkillsTitle {
+.Skills__title {
   height: fit-content;
   width: fit-content;
   justify-self: center;
@@ -36,13 +36,13 @@ $highlight-clr: #F2AA6B;
 }
 
 @media (orientation: landscape) {
-  .SkillsSticky {
+  .Skills--sticky {
     top: 15%;
   }
 }
 
 @media (orientation: portrait) {
-  .SkillsSticky {
+  .Skills--sticky {
     top:10%;
   }
 }

@@ -14,66 +14,28 @@ $highlight-clr: #F2AA6B;
   overflow: hidden;
 }
 
-.HelloText {
+.TitleCard__maintext {
   position: relative;
 }
 
-.TitleCardBG {
+.TitleCard__bg {
   position: absolute;
 }
 
-.TitleCardContainer {
+.TitleCard__container {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.TitleCardBGContainer {
+.TitleCard__bg__container {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-@media (orientation: landscape) {
-  .HelloText {
-    margin: 10% 35% 4% 15%;
-    height: fit-content;
-  }
-
-  .OrbitRotateContainer {
-    width: 80vw;
-    height: 80vw;
-    position: absolute;
-    right: -40vw;
-    bottom: -30vw;
-  }
-  
-  .TitleCardBG {
-    height: 20vw;
-    left: -35vw;
-  }
-}
-
-@media (orientation: portrait) {
-  .HelloText {
-    margin: 20% 10% 10% 10%;
-  }
-  .OrbitRotateContainer {
-    width: 180vw;
-    height: 180vw;
-    position: absolute;
-    bottom: -100vw;
-    left: -42vw;
-  }
-    
-  .TitleCardBG {
-    height: 45vw;
-    left: -76vw;
-  }
-}
-
-.HelloName {
+.TitleCard__maintext__name {
   font-size: calc(45px + 2.1vw);
   font-weight: 700;
   width: fit-content;
@@ -83,11 +45,11 @@ $highlight-clr: #F2AA6B;
   color: hsl(209, 100%, 13%);
 }
 
-.HelloContainer {
+.TitleCard__maintext__container {
   position: relative;
 }
 
-.WorkSkill {
+.TitleCard__maintext__subtext {
   font-size: calc(16px + 1.4vw);
   font-weight: 400;
   margin: .01em 0 .01em 0;
@@ -95,34 +57,34 @@ $highlight-clr: #F2AA6B;
   height: 1.2em;
 }
 
-.SkillList {
+.TitleCard__maintext__list {
   width: fit-content;
   display: inline-flex;
   white-space:pre;
 }
 
-.TextHighlight {
+.TitleCard__maintext__highlight {
   box-sizing: border-box;
   position: absolute;
   top: -3%;
   background-color: $highlight-clr;
 }
 
-.TextHighlight2 {
+.TitleCard__maintext__highlight2 {
   box-sizing: border-box;
   position: absolute;
   top: -3%;
   background-color: #A66B38;
 }
 
-.TransitionContainer {
+.TitleCard__transition__container {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.TransitionBox1 {
+.TitleCard__transition__box1 {
   position: absolute;
   top: 100%;
   width: 300%;
@@ -130,7 +92,7 @@ $highlight-clr: #F2AA6B;
   background-color: $offwhite-clr;
 }
 
-.TransitionBox2 {
+.TitleCard__transition__box2 {
   position: absolute;
   top: 100%;
   width: 300%;
@@ -139,7 +101,7 @@ $highlight-clr: #F2AA6B;
   background-color: $offwhite-clr;
 }
 
-.ScrollArrow {
+.TitleCard__arrow {
   width: 6vh;
   height: 6vh;
   position: absolute;
@@ -150,13 +112,52 @@ $highlight-clr: #F2AA6B;
   right:0;
 }
 
-.OrbitContainer {
+.TitleCard__planetary__container {
   width:100%;
   height:100%;
 }
 
-.Orbit {
+.TitleCard__planetary {
   Position: absolute;
   width: 100%;
   size: 100%;
+}
+
+
+@media (orientation: landscape) {
+  .TitleCard__maintext {
+    margin: 10% 35% 4% 15%;
+    height: fit-content;
+  }
+
+  .TitleCard__planetaryRotateContainer {
+    width: 80vw;
+    height: 80vw;
+    position: absolute;
+    right: -40vw;
+    bottom: -30vw;
+  }
+  
+  .TitleCard__bg {
+    height: 20vw;
+    left: -35vw;
+  }
+}
+
+@media (orientation: portrait) {
+  .TitleCard__maintext {
+    margin: 20% 10% 10% 10%;
+  }
+  .TitleCard__planetaryRotateContainer {
+    width: 180vw;
+    height: 180vw;
+    position: absolute;
+    bottom: -100vw;
+    left: -42vw;
+  }
+    
+  .TitleCard__bg {
+    height: 45vw;
+    left: -76vw;
+  }
 }

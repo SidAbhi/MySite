@@ -7,12 +7,12 @@ import "../stylesheets/Skills.scss"
 function Skills () {
   return(
     <div className="Skills zIndex5">
-      <div className="SkillsContainer">
-        <div className="SkillsSticky">
-          <h2 className="SkillsTitle">
+      <div className="Skills__container">
+        <div className="Skills--sticky">
+          <h2 className="Skills__title">
             SKILLS
           </h2>
-          <div className="SkillLists">
+          <div className="TitleCard__maintext__lists">
           </div>
         </div>
       </div>

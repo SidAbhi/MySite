@@ -172,45 +172,45 @@ function TitleCard() {
   return (
   <div className="TitleCard">
     <TitleCardNameBG/>
-    <div className="HelloText"> 
-      <div className="HelloContainer">       
-        <animated.div className="TextHighlight2" style={boxAnim2}></animated.div>
-        <animated.div className="TextHighlight" style={boxAnim}></animated.div>
-        <animated.h1 className="HelloName" style={textPos}>
+    <div className="TitleCard__maintext"> 
+      <div className="TitleCard__maintext__container">       
+        <animated.div className="TitleCard__maintext__highlight2" style={boxAnim2}></animated.div>
+        <animated.div className="TitleCard__maintext__highlight" style={boxAnim}></animated.div>
+        <animated.h1 className="TitleCard__maintext__name" style={textPos}>
           Hello<animated.span style={nameReveal}>, I'm Siddhi</animated.span>
         </animated.h1>
       </div>
-      <h2 className="WorkSkill">
+      <h2 className="TitleCard__maintext__subtext">
         {skillTrail.map((styles, index) => 
-          <animated.span key={index} style={styles} className="SkillList">{skills[index]}</animated.span>
+          <animated.span key={index} style={styles} className="TitleCard__maintext__list">{skills[index]}</animated.span>
         )}
       </h2>
-      <h2 className="WorkSkill">
+      <h2 className="TitleCard__maintext__subtext">
         {skillTrail2.map((styles, index) => 
-          <animated.span key={index} style={styles} className="SkillList">{skills2[index]}</animated.span>
+          <animated.span key={index} style={styles} className="TitleCard__maintext__list">{skills2[index]}</animated.span>
         )}
       </h2>
-      <h2 className="WorkSkill">
+      <h2 className="TitleCard__maintext__subtext">
         {skillTrail3.map((styles, index) => 
-          <animated.span key={index} style={styles} className="SkillList">{skills3[index]}</animated.span>
+          <animated.span key={index} style={styles} className="TitleCard__maintext__list">{skills3[index]}</animated.span>
         )}
       </h2>
     </div>
-    <div className="TransitionContainer">
-      <animated.div className="OrbitContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%)", "translate(0vw, 110%)"] })}}>
-        <animated.div className="OrbitRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
-          <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
+    <div className="TitleCard__transition__container">
+      <animated.div className="TitleCard__planetary__container" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%)", "translate(0vw, 110%)"] })}}>
+        <animated.div className="TitleCard__planetaryRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
+          <animated.svg className = "TitleCard__planetary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
             <title>Orbit</title>
             <circle  cx="419" cy="408" r="387.2" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
             <circle cx="31.8" cy="397.9" r="23.4" fill="#F2AA6B"/>
           </animated.svg>
-          <animated.svg className = "Orbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
+          <animated.svg className = "TitleCard__planetary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
             <path d="M608.1,484.4l14-2.5L613,471l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L613,345l9.1-10.9-14-2.5,28.3-49.1H579.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V220.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L419,156.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H201.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L202.9,408l12.3,7.1-43.5,36.5L225.1,471l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L419,659.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V580.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="1.4"/>
         </animated.svg>
         </animated.div>
       </animated.div>
       <animated.svg 
-        className="ScrollArrow" 
+        className="TitleCard__arrow" 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 902.2 989.4"
         strokeDasharray = {6156}
@@ -220,8 +220,8 @@ function TitleCard() {
         <title>Arrow</title>
         <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="27"/>
       </animated.svg>
-      <animated.div className="TransitionBox1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(-50vw, -60%) rotate(-60deg)"] })}}></animated.div>
-      <animated.div className="TransitionBox2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(50vw, -60%) rotate(60deg)"] })}}></animated.div>
+      <animated.div className="TitleCard__transition__box1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(-50vw, -60%) rotate(-60deg)"] })}}></animated.div>
+      <animated.div className="TitleCard__transition__box2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(50vw, -60%) rotate(60deg)"] })}}></animated.div>
     </div>
   </div>
   )
