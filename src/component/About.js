@@ -1,17 +1,14 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import { useMediaQuery } from "react-responsive";
 import useWindowDimensions from "./GetWindowDimensions";
 import AboutContent from "./AboutContent";
 import AboutTitleBox from "./AboutTitleBox";
 import "../stylesheets/About.css";
-import AboutBG from "./AboutBG";
+// import AboutBG from "./AboutBG";
 
 function About () {
   const windowDimensions = useWindowDimensions();
-
-  const mediaQ = useMediaQuery({ query: '(orientation: landscape)' });
 
   const scrollThresh = windowDimensions.height * 3;
   
@@ -32,9 +29,9 @@ function About () {
           <AboutContent/>
         </div>
       </div>
-      <div className="AboutBGContainer">
+      {/* <div className="AboutBGContainer">
           <AboutBG/>
-      </div>
+      </div> */}
       <div className="AboutTransitionContainer">
         <animated.div 
           className = "AboutTransition" 
