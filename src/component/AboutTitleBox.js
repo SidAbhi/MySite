@@ -18,9 +18,9 @@ function AboutTitleBox () {
   );
 
   return (
-    <div className="AboutMeTitleContainer">  
+    <div className="About__title__container">  
       <animated.svg 
-        className="AboutTitleBox" 
+        className="About__title__box" 
         preserveAspectRatio="none" 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 799.1 264.5"
@@ -49,7 +49,7 @@ function AboutTitleBox () {
         }}
       />              
       <animated.h2 
-        className="AboutMeTitle" 
+        className="About__title" 
         style={{
           opacity: scrollVal.scroll.to({ 
             range: [0, scrollThresh * (2.7/10), scrollThresh * (3.5/10), scrollThresh + 1], 

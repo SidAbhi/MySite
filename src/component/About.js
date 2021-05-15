@@ -4,8 +4,7 @@ import { useScroll } from "react-use-gesture";
 import useWindowDimensions from "./GetWindowDimensions";
 import AboutContent from "./AboutContent";
 import AboutTitleBox from "./AboutTitleBox";
-import "../stylesheets/About.css";
-// import AboutBG from "./AboutBG";
+import "../stylesheets/About.scss";
 
 function About () {
   const windowDimensions = useWindowDimensions();
@@ -23,18 +22,15 @@ function About () {
 
   return(
     <div className="About">
-      <div className="AboutMeContainer">
-        <div className="AboutMeSticky">
+      <div className="About__container">
+        <div className="About--sticky">
           <AboutTitleBox/>
           <AboutContent/>
         </div>
       </div>
-      {/* <div className="AboutBGContainer">
-          <AboutBG/>
-      </div> */}
-      <div className="AboutTransitionContainer">
+      <div className="About__transition__container">
         <animated.div 
-          className = "AboutTransition" 
+          className = "About__transition" 
           style = {{
             transform: scrollVal.scroll.to({ 
               range: [0, scrollThresh * (2/3), scrollThresh + 1], 

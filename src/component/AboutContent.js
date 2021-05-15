@@ -26,9 +26,9 @@ function AboutContent () {
   
 
   return (
-    <div className="AboutMeContent">
+    <div className="About__content">
       <animated.svg xmlns="http://www.w3.org/2000/svg" 
-        className="QuoteBox" 
+        className="About__quotebox" 
         viewBox="0 0 760 760" 
         preserveAspectRatio="none"
         strokeDasharray = {1900}
@@ -40,21 +40,21 @@ function AboutContent () {
         }
       >
         <path d="M753.5 555.5 753.5 5.5 209 5.5"
-          className="QuoteBox"
+          className="About__quotebox"
           fill="none" 
           stroke="#F2AA6B" 
           strokeMiterlimit={10} 
-          strokeWidth="4" 
+          strokeWidth="2" 
           vectorEffect="non-scaling-stroke" 
           strokeLinecap="round"
         />
         <polyline 
-          className="QuoteBox" 
+          className="About__quotebox" 
           points="5.5 197 5.5 753.5 664.5 753.5" 
           fill="none" 
           stroke="#F2AA6B" 
           strokeMiterlimit={10} 
-          strokeWidth="4" 
+          strokeWidth="2" 
           vectorEffect="non-scaling-stroke" 
           strokeLinecap="round"
         />

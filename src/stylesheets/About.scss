@@ -1,16 +1,19 @@
+$dark-clr: #2D4459;
+$offwhite-clr: #DADDD1;
+$highlight-clr: #F2AA6B;
 
 .About {
   display: flex;
   height: 200%;
   width: 100%;
-  background-color: #DADDD1;
-  color: #2D4459;
+  background-color: $offwhite-clr;
+  color: $dark-clr;
   margin: 0;
   padding: 0;
   overflow: visible;
 }
 
-.AboutMeTitle {
+.About__title {
   font-size: calc(35px + 1.9vw);
   font-weight: 600;
   margin: 0 auto 0 auto;
@@ -21,7 +24,7 @@
   z-index: 3;
 }
 
-.AboutMeTitleContainer {
+.About__title__container {
   width: fit-content;
   height: fit-content;
   align-self: center;
@@ -30,74 +33,7 @@
   margin: 0 auto 0 auto;
 }
 
-.AboutMeContent {
-  font-size: calc(12px + .8vw)  ;
-  position: relative;
-  /* color: #DADDD1 */
-  font-weight: 400;
-  width: 85%;
-  height: fit-content;
-  line-height: 1.7;
-}
-
-
-.AboutMeContainer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto 0 auto;
-  height: 160%;
-  width: 90%;
-}
-
-.AboutMeSticky {
-  position: sticky;
-  width: 100%;
-  height: fit-content;
-}
-
-.AboutBG {
-  position: sticky;
-}
-
-.AboutBGCPU {
-  position: absolute;
-}
-
-.AboutBGContainer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto 0 auto;
-  width: 100%;
-  height: 250%;
-}
-
-.AboutTransitionContainer {
-  overflow: hidden;
-  height: 200%;
-  width: 100%;
-  position: absolute;
-}
-
-.AboutTransition {
-  position: absolute;
-  width: 300%;
-  height: 100%;
-  top: 100%;
-  left: -50%;
-  background-color: #2D4459;
-}
-
-.QuoteBox {
-  width: 108%;
-  height: 108%;
-  position: absolute;
-  left: -4%;
-  top: -4%;
-}
-
-.AboutTitleBox {
+.About__title__box {
   width: 115%;
   height: 150%;
   position: absolute;
@@ -106,48 +42,72 @@
   z-index: 1;
 }
 
+.About__content {
+  font-size: calc(12px + .8vw)  ;
+  position: relative;
+  font-weight: 400;
+  width: 85%;
+  height: fit-content;
+  line-height: 1.7;
+}
+
+.About__container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0 auto;
+  height: 160%;
+  width: 90%;
+}
+
+.About--sticky {
+  position: sticky;
+  width: 100%;
+  height: fit-content;
+}
+
+.About__transition__container {
+  overflow: hidden;
+  height: 200%;
+  width: 100%;
+  position: absolute;
+}
+
+.About__transition {
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 100%;
+  left: -50%;
+  background-color: $dark-clr;
+}
+
+.About__quotebox {
+  width: 108%;
+  height: 108%;
+  position: absolute;
+  left: -4%;
+  top: -4%;
+}
+
 @media (orientation: landscape) {
-  .AboutMeSticky {
+  .About--sticky {
     top: 30%;
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;
     justify-items: center;
   }
-
-  .AboutBG {
-    width: 600px;
-    height: 600px;
-    left: -200px;
-    top: calc(100vh - 300px);
-  }
-
-  .AboutBGCPU {
-    width: 600px;
-    height: 600px;
-  }
 }
 
 @media (orientation: portrait) {
-  .AboutMeSticky {
+  .About--sticky {
     top:10%;
   }
 
-  .AboutMeContent {
+  .About__content {
     text-align: center;
     justify-self: center;
-    margin: 2.5em auto 0 auto;
-  }
-
-  .AboutBG {
-    width: 70vw;
-    height: 70vw;
-    left: 15vw;
-    top: 80vh;
-  }
-
-  .AboutBGCPU {
-    width: 75vw;
-    height: 75vw;
+    margin: 3.5em auto 0 auto;
   }
 }

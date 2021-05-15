@@ -4,7 +4,7 @@ import { useScroll } from "react-use-gesture";
 import { useMediaQuery } from "react-responsive";
 import useWindowDimensions from "./GetWindowDimensions";
 import TitleCardNameBG from "./TitleCardNameBG";
-import "../stylesheets/TitleCard.css";
+import "../stylesheets/TitleCard.scss";
 
 
 function TitleCard() {

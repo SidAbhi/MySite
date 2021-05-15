@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
 
-html, main, .Main{
+$dark-clr: #2D4459;
+$offwhite-clr: #DADDD1;
+$highlight-clr: #F2AA6B;
+
+html, 
+main, 
+.Main {
   height: 100%;
 }
 
 body {
   height: 100%;
-  margin-top:0;
+  margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  color: #F2AA6B;
+  color: $highlight-clr;
 }
 
 .ZIndex0 {
