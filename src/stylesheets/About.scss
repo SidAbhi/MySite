@@ -43,7 +43,7 @@ $highlight-clr: #F2AA6B;
 }
 
 .About__content {
-  font-size: calc(12px + .8vw)  ;
+  font-size: calc(10px + .6vw)  ;
   position: relative;
   font-weight: 400;
   width: 85%;
@@ -71,6 +71,7 @@ $highlight-clr: #F2AA6B;
   height: 200%;
   width: 100%;
   position: absolute;
+  pointer-events: none;
 }
 
 .About__transition {

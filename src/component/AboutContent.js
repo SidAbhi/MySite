@@ -34,7 +34,7 @@ function AboutContent () {
         strokeDasharray = {1900}
         strokeDashoffset = {
           scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (1.5/10), scrollThresh * (2.5/10), scrollThresh * (3/10), scrollThresh + 1], 
+            range: [0, scrollThresh * (1.5/10), scrollThresh * (3/10), scrollThresh * (5/10), scrollThresh + 1], 
             output: [1900, 1900, 1600, 1200, 600]
           })
         }
@@ -65,8 +65,15 @@ function AboutContent () {
           height: "100%",
           overflow: "hidden"}}
       >
-        <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh*(2/10), scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output:  animationResp})}}>Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, I'm primarily focused on motion and layout design. I became interested in web and frontend development during the pandemic.</animated.p>
-        <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output: animationResp2 })}}>Whatt I enjoy the most about web development is the freedom to design and build without the restrictions of traditional media. Creating new ways to convey information through interactivity.</animated.p>
+        <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh*(2/10), scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output:  animationResp})}}>
+          Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, I'm primarily focused on motion and layout design.
+        </animated.p>
+        <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output: animationResp2 })}}>
+          My interest in design began while I was studying psychology. Obsessed with making a visually appealing presentation leveraging my knowledge of psychology with a bit of design knowledge.
+        </animated.p>
+        <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2.3/5), scrollThresh * (2.8/5), scrollThresh + 1], output: animationResp2 })}}>
+           With web development, I started learning as a project lead trying to understand and better communicate with the developer I was working with, which made me try to make my own designs and websites.
+        </animated.p>
       </div>
     </div>
   );

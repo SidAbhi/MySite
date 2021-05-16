@@ -6,12 +6,12 @@ $highlight-clr: #F2AA6B;
   display: flex;
   height: 100%;
   width: 100%;
-  user-select: none;
   background-color: $dark-clr;
   color: $highlight-clr;
   margin: 0;
   padding:0;
   overflow: hidden;
+  user-select: none;
 }
 
 .TitleCard__maintext {
@@ -39,10 +39,12 @@ $highlight-clr: #F2AA6B;
   font-size: calc(45px + 2.1vw);
   font-weight: 700;
   width: fit-content;
+  line-height: 1.2;
   margin: 0 0 .2em 0;
   filter: invert(1);
   mix-blend-mode: difference;
   color: hsl(209, 100%, 13%);
+  user-select: text;
 }
 
 .TitleCard__maintext__container {
@@ -55,6 +57,7 @@ $highlight-clr: #F2AA6B;
   margin: .01em 0 .01em 0;
   overflow: hidden;
   height: 1.2em;
+  user-select: text;
 }
 
 .TitleCard__maintext__list {
@@ -78,6 +81,7 @@ $highlight-clr: #F2AA6B;
 }
 
 .TitleCard__transition__container {
+  pointer-events: none;
   position: absolute;
   width: 100%;
   height: 100%;

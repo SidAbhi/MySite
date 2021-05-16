@@ -17,6 +17,7 @@ function TitleCard() {
   const scrollThresh = windowDimensions.height;
   
   const [scrollVal, api] = useSpring(() => ({scroll: 0}));
+  
 
   useScroll(({ xy: [, y] }) => 
     api.start({
@@ -62,7 +63,7 @@ function TitleCard() {
   });
 
   const skills = ["Front", "end ", "development"];
-  const skills2 = ["Visual ", "& ", "motion ", "design"];
+  const skills2 = ["Visual ", "design & ", "motion ", "graphics"];
   const skills3 = ["3D ", "CG ", "& ", "VFX"];
 
   const skillTrail = useTrail(
@@ -112,7 +113,7 @@ function TitleCard() {
     to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
     delay: 1230,
     config: {       
-      mass: 2,
+      mass: 4,
       tension: 280,
       friction: 45,
     }
@@ -123,7 +124,7 @@ function TitleCard() {
     to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
     delay: 1130,
     config: {       
-      mass: 2,
+      mass: 4,
       tension: 300,
       friction: 45,
     }
@@ -135,18 +136,57 @@ function TitleCard() {
     delay: 1500,
     config: {       
       mass: 1,
-      tension: 35,
+      tension: 55,
       friction: 45,
+    }
+  })
+
+  const sunExpand = useSpring({
+    from: { transform: "scale(0,0)" },
+    transform: "scale(1,1)",
+    delay: 850,
+    config: {       
+      mass: 4,
+      tension: 115,
+      friction: 35,
+    }
+  })
+
+  const {strokeWidthAnim, stroke2} = useSpring({
+    from: { 
+      strokeWidthAnim: 0,
+      stroke2: 0,
+    },
+    strokeWidthAnim: 2,
+    stroke2: 1,
+    delay: 1350,
+    config: {       
+      mass: 4,
+      tension: 95,
+      friction: 35,
+    }
+  })
+
+  const {radius} = useSpring({
+    from: { 
+      radius: 0
+    },
+    radius: 23.4,
+    delay: 1450,
+    config: {       
+      mass: 4,
+      tension: 285,
+      friction: 35,
     }
   })
 
   const { fillColor } = useSpring({
     from: {fillColor: "#F2AA6B00"},
     fillColor: "#F2AA6BFF",
-    delay: 2500,
+    delay: 2200,
     config: {       
-      mass: 1,
-      tension: 55,
+      mass: 2,
+      tension: 85,
       friction: 15,
     }
   });
@@ -170,7 +210,7 @@ function TitleCard() {
   });
 
   return (
-  <div className="TitleCard">
+  <div className="TitleCard ZIndex0">
     <TitleCardNameBG/>
     <div className="TitleCard__maintext"> 
       <div className="TitleCard__maintext__container">       
@@ -199,14 +239,26 @@ function TitleCard() {
     <div className="TitleCard__transition__container">
       <animated.div className="TitleCard__planetary__container" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%)", "translate(0vw, 110%)"] })}}>
         <animated.div className="TitleCard__planetaryRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
-          <animated.svg className = "TitleCard__planetary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={orbit}>
+          <animated.svg 
+            className = "TitleCard__planetary" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 838 816" 
+            style={orbit}
+          >
             <title>Orbit</title>
-            <circle  cx="419" cy="408" r="387.2" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="2" strokeDasharray="18.02 26.02"/>
-            <circle cx="31.8" cy="397.9" r="23.4" fill="#F2AA6B"/>
+            <animated.circle  cx="419" cy="408" r="387.2" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth={strokeWidthAnim} strokeDasharray="18.02 26.02" strokeDashoffset={stroke2.to(stroke2 => (1 - stroke2) * 70)}/>
+            <animated.circle cx="31.8" cy="397.9" r={radius} fill="#F2AA6B"/>
           </animated.svg>
-          <animated.svg className = "TitleCard__planetary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 816" style={rotation}>
-            <path d="M608.1,484.4l14-2.5L613,471l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L613,345l9.1-10.9-14-2.5,28.3-49.1H579.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V220.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L419,156.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H201.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L202.9,408l12.3,7.1-43.5,36.5L225.1,471l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L419,659.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V580.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="1.4"/>
-        </animated.svg>
+          <animated.div className="TitleCard__planetary__container" style={sunExpand}>
+            <animated.svg 
+              className = "TitleCard__planetary" 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 838 816" 
+              style={rotation}
+            >
+              <path d="M608.1,484.4l14-2.5L613,471l53.3-19.4-43.5-36.5,12.3-7.1-12.3-7.1,43.5-36.5L613,345l9.1-10.9-14-2.5,28.3-49.1H579.7l4.9-13.4-14.1,2.4,9.9-55.8-53.3,19.4V220.8l-12.4,7.1-9.8-55.8-43.5,36.4-4.9-13.4-9.1,11L419,156.9l-28.4,49.2-9.1-11-4.9,13.4-43.5-36.4-9.8,55.8-12.4-7.1v14.3l-53.3-19.4,9.9,55.8-14.1-2.4,4.9,13.4H201.6l28.3,49.1-14,2.5,9.2,10.9-53.4,19.4,43.5,36.5L202.9,408l12.3,7.1-43.5,36.5L225.1,471l-9.2,10.9,14,2.5-28.3,49.1h56.7l-4.9,13.4,14.1-2.4-9.9,55.8,53.3-19.4v14.3l12.4-7.1,9.8,55.8,43.5-36.4,4.9,13.4,9.1-11L419,659.1l28.4-49.2,9.1,11,4.9-13.4,43.5,36.4,9.8-55.8,12.4,7.1V580.9l53.3,19.4-9.9-55.8,14.1,2.4-4.9-13.4h56.7Z" fill="none" stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="1.4"/>
+            </animated.svg>
+          </animated.div>
         </animated.div>
       </animated.div>
       <animated.svg 
@@ -215,7 +267,7 @@ function TitleCard() {
         viewBox="0 0 902.2 989.4"
         strokeDasharray = {6156}
         strokeDashoffset = {stroke.to(stroke => (1 - stroke) * 6256)}
-        style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh / 32 , scrollThresh /4], output: ["translate(0%, 0%) rotate(0deg)", "translate(0%, 0%) rotate(180deg)", "translate(0%, -200%) rotate(180deg)"] })}}
+        style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh / 32 , scrollThresh /4], output: ["translate(0%, 0%) rotate(0deg) scale(1,1)", "translate(0%, 0%) rotate(180deg) scale(1,1)", "translate(0%, -200%) rotate(180deg) scale(1.2,1.2)"] })}}
       >
         <title>Arrow</title>
         <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="27"/>
