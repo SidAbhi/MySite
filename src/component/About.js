@@ -4,6 +4,7 @@ import { useScroll } from "react-use-gesture";
 import useWindowDimensions from "./GetWindowDimensions";
 import AboutContent from "./AboutContent";
 import AboutTitleBox from "./AboutTitleBox";
+import AboutAnimation from "./AboutAnimation";
 import "../stylesheets/About.scss";
 
 function About () {
@@ -23,6 +24,9 @@ function About () {
   return(
     <div className="About">
       <div className="About__container">
+        <div className="About__animation__container">
+          <AboutAnimation/>
+        </div>
         <div className="About--sticky">
           <AboutTitleBox/>
           <AboutContent/>
@@ -34,7 +38,7 @@ function About () {
           style = {{
             transform: scrollVal.scroll.to({ 
               range: [0, scrollThresh * (2/3), scrollThresh + 1], 
-              output: ["translate(0vw, 0vh) rotate(2deg)", "translate(0vw, 0vh) rotate(2deg)", "translate(0vw, -80%) rotate(8deg)"]
+              output: ["translate(0vw, 0vh) rotate(2deg)", "translate(0vw, 0vh) rotate(2deg)", "translate(0vw, -80vh) rotate(8deg)"]
             })
           }}
         />

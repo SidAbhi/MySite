@@ -29,7 +29,7 @@ function TitleCard() {
   const textPos = useSpring({
     cancel: animStop,
     from: {
-      transform: "translate(15vw, -150%)",
+      transform: "translate(15vw, -150vh)",
     },
     to: [
       {
@@ -237,7 +237,7 @@ function TitleCard() {
       </h2>
     </div>
     <div className="TitleCard__transition__container">
-      <animated.div className="TitleCard__planetary__container" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%)", "translate(0vw, 110%)"] })}}>
+      <animated.div className="TitleCard__planetary__container" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh)", "translate(0vw, 110vh)"] })}}>
         <animated.div className="TitleCard__planetaryRotateContainer" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["rotate(0deg)", "rotate(-60deg)"] })}}>
           <animated.svg 
             className = "TitleCard__planetary" 
@@ -272,8 +272,8 @@ function TitleCard() {
         <title>Arrow</title>
         <animated.polygon points="898.7 588.7 898.7 7.8 451.1 403.9 3.5 7.8 3.5 588.7 451.1 984.8 898.7 588.7" fill={fillColor} stroke="#F2AA6B" strokeMiterlimit="10" strokeWidth="27"/>
       </animated.svg>
-      <animated.div className="TitleCard__transition__box1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(-50vw, -60%) rotate(-60deg)"] })}}></animated.div>
-      <animated.div className="TitleCard__transition__box2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0%) rotate(0deg)", "translate(50vw, -60%) rotate(60deg)"] })}}></animated.div>
+      <animated.div className="TitleCard__transition__box1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(-50vw, -190vh) rotate(-60deg)"] })}}></animated.div>
+      <animated.div className="TitleCard__transition__box2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh + 1], output: ["translate(0vw, 0vh) rotate(0deg)", "translate(50vw, -190vh) rotate(60deg)"] })}}></animated.div>
     </div>
   </div>
   )

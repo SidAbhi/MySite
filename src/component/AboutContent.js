@@ -69,10 +69,10 @@ function AboutContent () {
           Hello. I'm Siddhi, a design focused frontend developer. With 10 years of graphic design experience, I'm primarily focused on motion and layout design.
         </animated.p>
         <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2/5), scrollThresh * (2.5/5), scrollThresh + 1], output: animationResp2 })}}>
-          My interest in design began while I was studying psychology. Obsessed with making a visually appealing presentation leveraging my knowledge of psychology with a bit of design knowledge.
+          My interest in design began while I was studying psychology and picking up a few books on design and cognitive science. I designed off and on since then, and will usually do design work even when it was outside of my job description.
         </animated.p>
         <animated.p style={{transform: scrollVal.scroll.to({ range: [scrollThresh * (2.3/5), scrollThresh * (2.8/5), scrollThresh + 1], output: animationResp2 })}}>
-           With web development, I started learning as a project lead trying to understand and better communicate with the developer I was working with, which made me try to make my own designs and websites.
+           With web development, I started learning because I was a project lead of an online psychometric testing site. I was trying to understand and better communicate with the developer I was working with and took a course on web development.
         </animated.p>
       </div>
     </div>

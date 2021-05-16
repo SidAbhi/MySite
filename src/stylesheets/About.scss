@@ -4,13 +4,24 @@ $highlight-clr: #F2AA6B;
 
 .About {
   display: flex;
-  height: 200%;
+  height: 200vh;
   width: 100%;
   background-color: $offwhite-clr;
   color: $dark-clr;
   margin: 0;
   padding: 0;
   overflow: visible;
+}
+
+.About__animation {
+  position: sticky;
+  margin-top: 70vh;
+}
+
+.About__animation__container {
+  position: absolute;
+  width: 100%;
+  height: 270vh;
 }
 
 .About__title {
@@ -56,8 +67,8 @@ $highlight-clr: #F2AA6B;
   left: 0;
   right: 0;
   margin: 0 auto 0 auto;
-  height: 160%;
-  width: 90%;
+  height: 160vh;
+  width: 100vw;
 }
 
 .About--sticky {
@@ -68,7 +79,7 @@ $highlight-clr: #F2AA6B;
 
 .About__transition__container {
   overflow: hidden;
-  height: 200%;
+  height: 200vh;
   width: 100%;
   position: absolute;
   pointer-events: none;
@@ -77,38 +88,52 @@ $highlight-clr: #F2AA6B;
 .About__transition {
   position: absolute;
   width: 300%;
-  height: 100%;
+  height: 100vh;
   top: 100%;
   left: -50%;
   background-color: $dark-clr;
 }
 
 .About__quotebox {
-  width: 108%;
-  height: 108%;
+  width: 104%;
+  height: 102%;
   position: absolute;
-  left: -4%;
-  top: -4%;
+  left: -2%;
+  top: -1%;
 }
 
 @media (orientation: landscape) {
   .About--sticky {
-    top: 30%;
+    top: 10vh;
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;
     justify-items: center;
   }
+
+  .About__animation {
+    top: 40vh;
+    width: 50vw;
+    height: 50vw;
+    left: 50vw - 25vw;
+  }
 }
 
 @media (orientation: portrait) {
   .About--sticky {
-    top:10%;
+    top:5vh;
   }
 
   .About__content {
     text-align: center;
     justify-self: center;
     margin: 3.5em auto 0 auto;
+  }
+
+  .About__animation {
+    top: 70vh;
+    left: 50vw - 40vw;
+    width: 100vw;
+    height: 100vw;
   }
 }
