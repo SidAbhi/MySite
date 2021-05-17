@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useSpring, animated, useTrail } from "react-spring";
-import { useScroll } from "react-use-gesture";
-import { useMediaQuery } from "react-responsive";
-import useWindowDimensions from "./GetWindowDimensions";
-import TitleCardNameBG from "./TitleCardNameBG";
-import "../stylesheets/TitleCard.scss";
+import React, { useState } from 'react';
+import { useSpring, animated, useTrail } from 'react-spring';
+import { useScroll } from 'react-use-gesture';
+import { useMediaQuery } from 'react-responsive';
+import useWindowDimensions from './GetWindowDimensions';
+import TitleCardNameBG from './TitleCardNameBG';
+import '../stylesheets/TitleCard.scss';
 
 
 function TitleCard() {
@@ -29,17 +29,17 @@ function TitleCard() {
   const textPos = useSpring({
     cancel: animStop,
     from: {
-      transform: "translate(15vw, -150vh)",
+      transform: 'translate(15vw, -150vh)',
     },
     to: [
       {
-        transform: "translate(15vw, 0)", 
+        transform: 'translate(15vw, 0)', 
         config: {
           mass: 5,
           tension: 480,
           friction: 85,
       }},
-      {transform: "translate(0, 0)", delay: 400},
+      {transform: 'translate(0, 0)', delay: 400},
     ],
     onRest: ()=>setAnimStop(true),
     delay: 100,
@@ -62,9 +62,9 @@ function TitleCard() {
     }
   });
 
-  const skills = ["Front", "end ", "development"];
-  const skills2 = ["Visual ", "design & ", "motion ", "graphics"];
-  const skills3 = ["3D ", "CG ", "& ", "VFX"];
+  const skills = ['Front', 'end ', 'development'];
+  const skills2 = ['Visual ', 'design & ', 'motion ', 'graphics'];
+  const skills3 = ['3D ', 'CG ', '& ', 'VFX'];
 
   const skillTrail = useTrail(
     skills.length,
@@ -75,8 +75,8 @@ function TitleCard() {
         friction: 70,
       },
       delay: 1400,
-      from: {transform: "translate(0, 5em)"}, 
-      to: {transform: "translate(0, 0)"},
+      from: {transform: 'translate(0, 5em)'}, 
+      to: {transform: 'translate(0, 0)'},
     }
   );
 
@@ -89,8 +89,8 @@ function TitleCard() {
         friction: 77,
       },
       delay: 1600,
-      from: {transform: "translate(0, 5em)"}, 
-      to: {transform: "translate(0, 0)"},
+      from: {transform: 'translate(0, 5em)'}, 
+      to: {transform: 'translate(0, 0)'},
     }
   );
   
@@ -103,14 +103,14 @@ function TitleCard() {
         friction: 82,
       },
       delay: 1800,
-      from: {transform: "translate(0, 5em)"}, 
-      to: {transform: "translate(0, 0)"},
+      from: {transform: 'translate(0, 5em)'}, 
+      to: {transform: 'translate(0, 0)'},
     }
   );
 
   const boxAnim = useSpring({
-    from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
-    to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
+    from: {width: '0%', height: '105%', padding: '0%', left: '100%'},
+    to: {width: '110%', height: '105%', padding: '5%', left: '-5%'},
     delay: 1230,
     config: {       
       mass: 4,
@@ -120,8 +120,8 @@ function TitleCard() {
   });
 
   const boxAnim2 = useSpring({
-    from: {width: "0%", height: "105%", padding: "0%", left: "100%"},
-    to: {width: "110%", height: "105%", padding: "5%", left: "-5%"},
+    from: {width: '0%', height: '105%', padding: '0%', left: '100%'},
+    to: {width: '110%', height: '105%', padding: '5%', left: '-5%'},
     delay: 1130,
     config: {       
       mass: 4,
@@ -142,8 +142,8 @@ function TitleCard() {
   })
 
   const sunExpand = useSpring({
-    from: { transform: "scale(0,0)" },
-    transform: "scale(1,1)",
+    from: { transform: 'scale(0,0)' },
+    transform: 'scale(1,1)',
     delay: 850,
     config: {       
       mass: 4,
@@ -181,8 +181,8 @@ function TitleCard() {
   })
 
   const { fillColor } = useSpring({
-    from: {fillColor: "#F2AA6B00"},
-    fillColor: "#F2AA6BFF",
+    from: {fillColor: '#F2AA6B00'},
+    fillColor: '#F2AA6BFF',
     delay: 2200,
     config: {       
       mass: 2,
@@ -192,8 +192,8 @@ function TitleCard() {
   });
 
   const orbit = useSpring({
-    from: { transform: mediaQ ? "rotate(70deg)" : "rotate(0deg)"},
-    to: { transform:  mediaQ ? "rotate(430deg)" : "rotate(360deg)"},
+    from: { transform: mediaQ ? 'rotate(70deg)' : 'rotate(0deg)'},
+    to: { transform:  mediaQ ? 'rotate(430deg)' : 'rotate(360deg)'},
     loop: true,
     config: {
       duration: 127000,
@@ -201,8 +201,8 @@ function TitleCard() {
   });
 
   const rotation = useSpring({
-    from: { transform: mediaQ ? "rotate(90deg)" : "rotate(0deg)"},
-    to: { transform:  mediaQ ? "rotate(450deg)" : "rotate(360deg)"},
+    from: { transform: mediaQ ? 'rotate(90deg)' : 'rotate(0deg)'},
+    to: { transform:  mediaQ ? 'rotate(450deg)' : 'rotate(360deg)'},
     loop: true,
     config: {
       duration: 45000,

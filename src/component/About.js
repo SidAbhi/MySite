@@ -1,11 +1,12 @@
-import React from "react";
-import { useSpring, animated } from "react-spring";
-import { useScroll } from "react-use-gesture";
-import useWindowDimensions from "./GetWindowDimensions";
-import AboutContent from "./AboutContent";
-import AboutTitleBox from "./AboutTitleBox";
-import AboutAnimation from "./AboutAnimation";
-import "../stylesheets/About.scss";
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import { useScroll } from 'react-use-gesture';
+import useWindowDimensions from './GetWindowDimensions';
+import AboutContent from './AboutContent';
+import AboutTitleBox from './AboutTitleBox';
+import { Lottie } from '@crello/react-lottie';
+import '../stylesheets/About.scss';
+import DeskAnim from '../animations/DeskAnim.json';
 
 function About () {
   const windowDimensions = useWindowDimensions();
@@ -25,7 +26,14 @@ function About () {
     <div className="About">
       <div className="About__container">
         <div className="About__animation__container">
-          <AboutAnimation/>
+          <div className="About__animation">
+            <Lottie 
+            config={{
+              animationData: DeskAnim,
+              loop: true,
+              }}
+            />
+          </div>
         </div>
         <div className="About--sticky">
           <AboutTitleBox/>

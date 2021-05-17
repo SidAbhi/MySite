@@ -1,7 +1,7 @@
-import React from "react";
-import { useSpring, animated } from "react-spring";
-import { useScroll } from "react-use-gesture";
-import useWindowDimensions from "./GetWindowDimensions";
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import { useScroll } from 'react-use-gesture';
+import useWindowDimensions from './GetWindowDimensions';
 
 function TitleCardNameBG() {
   const windowDimensions = useWindowDimensions();
@@ -19,10 +19,10 @@ function TitleCardNameBG() {
 
   const patternAnim = useSpring({
     from: {
-      val: "translate(29.7 36.2) scale(0.45)",
+      val: 'translate(29.7 36.2) scale(0.45)',
     },
     to: { 
-      val: "translate(49.7 56.2) scale(0.45)",
+      val: 'translate(49.7 56.2) scale(0.45)',
     },
     delay: 900,
     config: {
@@ -34,11 +34,11 @@ function TitleCardNameBG() {
   
   const enterAnim = useSpring({
     from: {
-      transform: "translate(0%, -15%)",
+      transform: 'translate(0%, -15%)',
       opacity: 1,
     },
     to: { 
-      transform: "translate(0%, 0%)",
+      transform: 'translate(0%, 0%)',
       opacity: .45,
     },
     delay: 900,
@@ -52,10 +52,10 @@ function TitleCardNameBG() {
   
   const marquee = useSpring({
     from: {
-      transform: "translate(0, 0%)",
+      transform: 'translate(0, 0%)',
     },
     to: { 
-      transform: "translate(0, 200%)" 
+      transform: 'translate(0, 200%)' 
     },
     config: {
       duration: 70000,

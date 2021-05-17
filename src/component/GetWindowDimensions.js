@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from 'react-responsive';
 
 function getWindowDimensions() {
 
@@ -14,8 +14,8 @@ function getWindowDimensions() {
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
-  // let isLandscape = useMediaQuery({ query: "(max-device-width: 640px) and (orientation: landscape)" });
-  // let isPortrait = useMediaQuery({ query: "(max-device-width: 480px) and (orientation: portrait)" });
+  // let isLandscape = useMediaQuery({ query: '(max-device-width: 640px) and (orientation: landscape)' });
+  // let isPortrait = useMediaQuery({ query: '(max-device-width: 480px) and (orientation: portrait)' });
 
   // const mediaQ = (isLandscape === true || isPortrait === true) ? true : false;
 

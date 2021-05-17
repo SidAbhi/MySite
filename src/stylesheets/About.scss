@@ -54,7 +54,7 @@ $highlight-clr: #F2AA6B;
 }
 
 .About__content {
-  font-size: calc(10px + .6vw)  ;
+  font-size: calc(10px + .5vw);
   position: relative;
   font-weight: 400;
   width: 85%;
@@ -68,7 +68,7 @@ $highlight-clr: #F2AA6B;
   right: 0;
   margin: 0 auto 0 auto;
   height: 160vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .About--sticky {
@@ -88,7 +88,7 @@ $highlight-clr: #F2AA6B;
 .About__transition {
   position: absolute;
   width: 300%;
-  height: 100vh;
+  height: 200vh;
   top: 100%;
   left: -50%;
   background-color: $dark-clr;

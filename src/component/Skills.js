@@ -1,8 +1,8 @@
-import React from "react";
-import { useSpring, animated, useTrail } from "react-spring";
-import { useScroll } from "react-use-gesture";
-import { useMediaQuery } from "react-responsive";
-import "../stylesheets/Skills.scss"
+import React from 'react';
+import { useSpring, animated, useTrail } from 'react-spring';
+import { useScroll } from 'react-use-gesture';
+import { useMediaQuery } from 'react-responsive';
+import '../stylesheets/Skills.scss'
 
 function Skills () {
   return(

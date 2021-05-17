@@ -1,8 +1,8 @@
-import React from "react";
-import { useSpring, animated } from "react-spring";
-import { useScroll } from "react-use-gesture";
-import useWindowDimensions from "./GetWindowDimensions";
-import "../stylesheets/Nav.scss";
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import { useScroll } from 'react-use-gesture';
+import useWindowDimensions from './GetWindowDimensions';
+import '../stylesheets/Nav.scss';
 
 function Nav () {
   return (
