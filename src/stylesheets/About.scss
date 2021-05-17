@@ -94,17 +94,9 @@ $highlight-clr: #F2AA6B;
   background-color: $dark-clr;
 }
 
-.About__quotebox {
-  width: 104%;
-  height: 102%;
-  position: absolute;
-  left: -2%;
-  top: -1%;
-}
-
 @media (orientation: landscape) {
   .About--sticky {
-    top: 10vh;
+    top: 20vh;
     display: grid;
     grid-template-columns: 1fr 1.8fr;
     align-items: center;

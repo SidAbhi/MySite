@@ -27,38 +27,6 @@ function AboutContent () {
 
   return (
     <div className="About__content">
-      <animated.svg xmlns="http://www.w3.org/2000/svg" 
-        className="About__quotebox" 
-        viewBox="0 0 760 760" 
-        preserveAspectRatio="none"
-        strokeDasharray = {1900}
-        strokeDashoffset = {
-          scrollVal.scroll.to({ 
-            range: [0, scrollThresh * (1.5/10), scrollThresh * (3/10), scrollThresh * (5/10), scrollThresh + 1], 
-            output: [1900, 1900, 1600, 1200, 600]
-          })
-        }
-      >
-        <path d="M753.5 555.5 753.5 5.5 209 5.5"
-          className="About__quotebox"
-          fill="none" 
-          stroke="#F2AA6B" 
-          strokeMiterlimit={10} 
-          strokeWidth="2" 
-          vectorEffect="non-scaling-stroke" 
-          strokeLinecap="round"
-        />
-        <polyline 
-          className="About__quotebox" 
-          points="5.5 197 5.5 753.5 664.5 753.5" 
-          fill="none" 
-          stroke="#F2AA6B" 
-          strokeMiterlimit={10} 
-          strokeWidth="2" 
-          vectorEffect="non-scaling-stroke" 
-          strokeLinecap="round"
-        />
-      </animated.svg>
       <div 
         style = {{
           width: "100%",
