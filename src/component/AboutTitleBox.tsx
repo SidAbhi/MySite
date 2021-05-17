@@ -12,7 +12,7 @@ function AboutTitleBox () {
 
   useScroll(({ xy: [, y] }) => 
     api.start({
-      scroll: Math.min(Math.max(parseInt(y), 0), scrollThresh),
+      scroll: Math.min(Math.max(y, 0), scrollThresh),
     }),
     { domTarget: window },
   );
@@ -43,7 +43,7 @@ function AboutTitleBox () {
             output: ["0%", "0%", "122%", "122%"]
           }),
           height: "100%",
-          zIndex: "2",
+          zIndex: 2,
           left: "-11%",
           transform: "skew(-21deg)"
         }}

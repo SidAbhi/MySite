@@ -73,8 +73,12 @@ $highlight-clr: #F2AA6B;
 
 .About--sticky {
   position: sticky;
-  width: 100%;
   height: fit-content;
+}
+
+.About__container--sticky {
+  margin: 0 auto 0 auto;
+  height: 100%;
 }
 
 .About__transition__container {
@@ -109,6 +113,10 @@ $highlight-clr: #F2AA6B;
     height: 50vw;
     left: 50vw - 25vw;
   }
+
+  .About__container--sticky {
+    width: 80%;
+  }
 }
 
 @media (orientation: portrait) {
@@ -119,7 +127,7 @@ $highlight-clr: #F2AA6B;
   .About__content {
     text-align: center;
     justify-self: center;
-    margin: 3.5em auto 0 auto;
+    margin: 1.5em auto 0 auto;
   }
 
   .About__animation {
@@ -127,5 +135,9 @@ $highlight-clr: #F2AA6B;
     left: 50vw - 40vw;
     width: 100vw;
     height: 100vw;
+  }
+
+  .About__container--sticky {
+    width: 90%;
   }
 }

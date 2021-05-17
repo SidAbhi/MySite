@@ -12,7 +12,7 @@ function TitleCardNameBG() {
 
   useScroll(({ xy: [, y] }) => 
     api.start({
-      scroll: Math.min(Math.max(parseInt(y), 0), scrollThresh),
+      scroll: Math.min(Math.max(y, 0), scrollThresh),
     }),
     { domTarget: window },
   );
