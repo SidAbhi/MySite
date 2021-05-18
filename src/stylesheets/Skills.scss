@@ -4,7 +4,7 @@ $highlight-clr: #F2AA6B;
 
 .Skills {
   width: 100%;
-  height: 500%;
+  height: 500vh;
   background-color: $dark-clr;
   margin: 0;
   position: relative;
@@ -35,14 +35,40 @@ $highlight-clr: #F2AA6B;
   font-weight: 600;
 }
 
+
+.Skills__animation__container{
+  position: absolute;
+  width: 100%;
+  height: 500vh;
+}
+
+.Skills__animation {
+  position: sticky;
+}
+
+
 @media (orientation: landscape) {
   .Skills--sticky {
     top: 15%;
+  }
+
+  .Skills__animation {
+    top: 10vh;
+    width: 50vw;
+    height: 50vw;
+    left: 50vw - 25vw;
   }
 }
 
 @media (orientation: portrait) {
   .Skills--sticky {
     top:10%;
+  }
+
+  .Skills__animation {
+    top: 20vh;
+    left: 50vw - 40vw;
+    width: 100vw;
+    height: 100vw;
   }
 }
