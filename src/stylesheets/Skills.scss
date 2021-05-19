@@ -14,7 +14,7 @@ $highlight-clr: #F2AA6B;
   position: absolute;
   left: 0;
   right: 0;
-  margin: 20% auto 0 auto;
+  margin: 0 auto 0 auto;
   width: 90%;
   height: 90%;
 }
@@ -49,7 +49,7 @@ $highlight-clr: #F2AA6B;
 
 @media (orientation: landscape) {
   .Skills--sticky {
-    top: 15%;
+    top: 10vh;
   }
 
   .Skills__animation {
@@ -62,11 +62,11 @@ $highlight-clr: #F2AA6B;
 
 @media (orientation: portrait) {
   .Skills--sticky {
-    top:10%;
+    top:5vh;
   }
 
   .Skills__animation {
-    top: 20vh;
+    top: 15vh;
     left: 50vw - 40vw;
     width: 100vw;
     height: 100vw;

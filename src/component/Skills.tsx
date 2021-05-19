@@ -1,25 +1,33 @@
-import React from 'react';
-import { useSpring, animated, useTrail } from 'react-spring';
+import React, { useEffect, useRef, useState } from 'react';
+import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
-import { useMediaQuery } from 'react-responsive';
 import useWindowDimensions from './GetWindowDimensions';
-import '../stylesheets/Skills.scss'
-import { Lottie } from '@crello/react-lottie';
+import '../stylesheets/Skills.scss';;
 import SkillsAnimation from '../animations/SkillsAnimation.json'
+// import lottie from "lottie-web";
+import { Lottie } from '@crello/react-lottie';
 
 function Skills () {
+  const animRef = useRef();
+
   const windowDimensions = useWindowDimensions();
 
-  const scrollThresh = windowDimensions.height * 8;
-  
-  const [scrollVal, api] = useSpring(() => ({scroll: 0}));
+  const scrollThresh = windowDimensions.height * 7;
 
-  useScroll(({ xy: [, y] }) => 
-    api.start({
-      scroll: Math.min(Math.max(y, 0), scrollThresh),
-    }),
+  let [scrollAnim, setScrollAnim] = useState(0)
+
+  console.log(windowDimensions)
+
+  useScroll(({ xy: [, y] }) => {
+      setScrollAnim(y);
+      console.log(scrollAnim);
+      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 4/7)))*255;
+      console.log((animRef as any).current.totalFrames);
+      (animRef as any).current.goToAndStop(scrollPercentage, true)
+    },
     { domTarget: window },
-  );
+  )
+
   return(
     <div className="Skills zIndex5">
       <div className="Skills__container">
@@ -27,17 +35,20 @@ function Skills () {
           <h2 className="Skills__title">
             SKILLS
           </h2>
-          <div className="Skills__animation__container">
-            <div className="Skills__animation">
-              <Lottie 
-                segments= {[5,5]}
-                config={{
-                  animationData: SkillsAnimation,
-                  loop: false,
-                  autoplay: false,
-                  }}
-                />
-            </div>
+        </div>
+      </div>
+      <div className="Skills__container">
+        <div className="Skills__animation__container">
+          <div className="Skills__animation">
+            <div id="SkillsAnimation"/>
+            <Lottie 
+            animationRef={animRef}
+            config={{
+              animationData: SkillsAnimation,
+              loop: false,
+              autoplay: false,
+              }}
+            />
           </div>
         </div>
       </div>
