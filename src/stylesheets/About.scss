@@ -3,6 +3,7 @@ $offwhite-clr: #DADDD1;
 $highlight-clr: #F2AA6B;
 
 .About {
+  position:relative;
   display: flex;
   height: 200vh;
   width: 100%;
@@ -12,6 +13,12 @@ $highlight-clr: #F2AA6B;
   padding: 0;
   overflow: visible;
 }
+
+// DO NOT CHANGE THIS!!, this fixes some visual glitches for some reason
+.About *{
+  outline: 1px solid rgba(255, 0, 0, 0);
+}
+
 
 .About__animation {
   position: sticky;

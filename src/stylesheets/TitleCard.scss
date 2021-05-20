@@ -3,6 +3,7 @@ $offwhite-clr: #DADDD1;
 $highlight-clr: #F2AA6B;
 
 .TitleCard {
+  position:relative;
   display: flex;
   height: 100vh;
   width: 100%;
@@ -94,16 +95,26 @@ $highlight-clr: #F2AA6B;
   position: absolute;
   top: 100%;
   width: 300%;
-  height: 300%;
+  height: 500%;
   background-color: $offwhite-clr;
+
 }
 
 .TitleCard__transition__box2 {
   position: absolute;
   top: 100%;
   width: 300%;
-  height: 300%;
+  height: 500%;
   right: 0%;
+  background-color: $offwhite-clr;
+
+}
+
+.TitleCard__transition__buffer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1vh;
   background-color: $offwhite-clr;
 }
 
@@ -124,7 +135,7 @@ $highlight-clr: #F2AA6B;
 }
 
 .TitleCard__planetary {
-  Position: absolute;
+  position: absolute;
   width: 100%;
   size: 100%;
 }

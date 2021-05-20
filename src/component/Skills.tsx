@@ -16,14 +16,12 @@ function Skills () {
 
   let [scrollAnim, setScrollAnim] = useState(0)
 
-  console.log(windowDimensions)
-
   useScroll(({ xy: [, y] }) => {
+      let animControl = (animRef as any).current
       setScrollAnim(y);
-      console.log(scrollAnim);
-      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*(animRef as any).current.totalFrames;
-      console.log((animRef as any).current.totalFrames);
-      (animRef as any).current.goToAndStop(scrollPercentage, true)
+      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*animControl.totalFrames
+      let scrollPercentageBound = Math.min(Math.max(scrollPercentage, 0), animControl.totalFrames-2);
+      animControl.goToAndStop(scrollPercentageBound, true)
     },
     { domTarget: window },
   )
