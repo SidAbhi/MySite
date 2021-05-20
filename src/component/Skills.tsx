@@ -21,7 +21,7 @@ function Skills () {
   useScroll(({ xy: [, y] }) => {
       setScrollAnim(y);
       console.log(scrollAnim);
-      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 4/7)))*255;
+      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*(animRef as any).current.totalFrames;
       console.log((animRef as any).current.totalFrames);
       (animRef as any).current.goToAndStop(scrollPercentage, true)
     },

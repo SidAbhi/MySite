@@ -30,6 +30,8 @@ $highlight-clr: #F2AA6B;
   margin: 0 auto 0 auto;
   width: fit-content;
   height: fit-content;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
   align-self: center;
   position: relative;
   z-index: 3;
@@ -38,6 +40,8 @@ $highlight-clr: #F2AA6B;
 .About__title__container {
   width: fit-content;
   height: fit-content;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
   align-self: center;
   justify-self: center;
   position:relative;
@@ -59,6 +63,7 @@ $highlight-clr: #F2AA6B;
   font-weight: 400;
   width: 85%;
   height: fit-content;
+  height: -moz-fit-content;
   line-height: 1.7;
 }
 
@@ -74,6 +79,7 @@ $highlight-clr: #F2AA6B;
 .About--sticky {
   position: sticky;
   height: fit-content;
+  height: -moz-fit-content;
 }
 
 .About__container--sticky {

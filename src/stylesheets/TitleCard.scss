@@ -39,6 +39,7 @@ $highlight-clr: #F2AA6B;
   font-size: calc(45px + 2.1vw);
   font-weight: 700;
   width: fit-content;
+  width: -moz-fit-content;
   line-height: 1.2;
   margin: 0 0 .2em 0;
   filter: invert(1);
@@ -62,6 +63,7 @@ $highlight-clr: #F2AA6B;
 
 .TitleCard__maintext__list {
   width: fit-content;
+  width: -moz-fit-content;
   display: inline-flex;
   white-space:pre;
 }
@@ -132,6 +134,7 @@ $highlight-clr: #F2AA6B;
   .TitleCard__maintext {
     margin: 10% 35% 4% 15%;
     height: fit-content;
+    height: -moz-fit-content;
   }
 
   .TitleCard__planetaryRotateContainer {
