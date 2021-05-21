@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useSpring } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import useWindowDimensions from './GetWindowDimensions';
 import '../stylesheets/Skills.scss';;
@@ -8,7 +8,13 @@ import SkillsAnimation from '../animations/SkillsAnimation.json'
 import { Lottie } from '@crello/react-lottie';
 
 function Skills () {
-  const animRef = useRef();
+  const animRef: any = useRef();
+
+  const springRef: any = useRef()
+
+  const [scrollSpring, api] = useSpring(() =>({
+    spring: 0,
+  }))
 
   const windowDimensions = useWindowDimensions();
 
@@ -17,11 +23,19 @@ function Skills () {
   let [scrollAnim, setScrollAnim] = useState(0)
 
   useScroll(({ xy: [, y] }) => {
-      let animControl = (animRef as any).current
-      setScrollAnim(y);
-      let scrollPercentage = ((scrollAnim-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*animControl.totalFrames
+      let animControl = (animRef).current;
+
+      let scrollPercentage = ((y-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*animControl.totalFrames;
+
       let scrollPercentageBound = Math.min(Math.max(scrollPercentage, 0), animControl.totalFrames-2);
-      animControl.goToAndStop(scrollPercentageBound, true)
+
+      setScrollAnim(scrollPercentageBound);
+
+      api.start({spring: scrollAnim});
+
+      console.log(scrollSpring.spring);
+
+      animControl.goToAndStop(scrollPercentageBound, true);
     },
     { domTarget: window },
   )
@@ -39,6 +53,7 @@ function Skills () {
         <div className="Skills__animation__container">
           <div className="Skills__animation">
             <div id="SkillsAnimation"/>
+            <animated.div ref={springRef} data-frame={scrollSpring.spring}></animated.div>
             <Lottie 
             animationRef={animRef}
             config={{

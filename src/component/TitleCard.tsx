@@ -283,7 +283,6 @@ function TitleCard() {
       <animated.div className="TitleCard__transition__box1" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh, scrollThresh+20], output: ["translate(-50vw, 0vh) rotate(0deg)", "translate(-50vw, -190vh) rotate(-40deg)", "translate(-50vw, -190vh) rotate(-40deg)"] })}}></animated.div>
       <animated.div className="TitleCard__transition__box2" style={{transform: scrollVal.scroll.to({ range: [0, scrollThresh, scrollThresh+20], output: ["translate(50vw, 0vh) rotate(0deg)", "translate(50vw, -190vh) rotate(40deg)", "translate(50vw, -190vh) rotate(40deg)"] })}}></animated.div>
     </div>
-    <div className="TitleCard__transition__buffer" />
   </div>
   )
 };
