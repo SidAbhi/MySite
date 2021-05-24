@@ -18,22 +18,20 @@ function Skills () {
 
   const windowDimensions = useWindowDimensions();
 
-  const scrollThresh = windowDimensions.height * 7;
+  const scrollThresh = document.body.clientHeight * (9/10);
 
   let [scrollAnim, setScrollAnim] = useState(0)
 
   useScroll(({ xy: [, y] }) => {
       let animControl = (animRef).current;
+      
+      let scrollPercentage = ((y-(scrollThresh * 3/10))/(scrollThresh-(scrollThresh * 3/10)))*animControl.totalFrames;
 
-      let scrollPercentage = ((y-(scrollThresh * 3/7))/(scrollThresh-(scrollThresh * 3/7)))*animControl.totalFrames;
-
-      let scrollPercentageBound = Math.min(Math.max(scrollPercentage, 0), animControl.totalFrames-2);
+      let scrollPercentageBound = Math.min(Math.max(scrollPercentage, 0), animControl.totalFrames-1);
 
       setScrollAnim(scrollPercentageBound);
 
       api.start({spring: scrollAnim});
-
-      console.log(scrollSpring.spring);
 
       animControl.goToAndStop(scrollPercentageBound, true);
     },
