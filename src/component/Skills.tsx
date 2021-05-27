@@ -18,14 +18,14 @@ function Skills () {
 
   const windowDimensions = useWindowDimensions();
 
-  const scrollThresh = document.body.clientHeight * (9/10);
+  const scrollThresh = document.body.clientHeight * (11/12);
 
   let [scrollAnim, setScrollAnim] = useState(0)
 
   useScroll(({ xy: [, y] }) => {
       let animControl = (animRef).current;
-      
-      let scrollPercentage = ((y-(scrollThresh * 3/10))/(scrollThresh-(scrollThresh * 3/10)))*animControl.totalFrames;
+
+      let scrollPercentage = ((y-(scrollThresh * 3/12))/(scrollThresh-(scrollThresh * 3/12)))*animControl.totalFrames;
 
       let scrollPercentageBound = Math.min(Math.max(scrollPercentage, 0), animControl.totalFrames-1);
 
