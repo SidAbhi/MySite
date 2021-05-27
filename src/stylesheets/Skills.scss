@@ -34,7 +34,6 @@ $highlight-clr: #F2AA6B;
   justify-self: center;
   align-self: center;
   font-size: calc(45px + 2.1vw);
-  margin: 20vh auto 0 auto;
   font-weight: 600;
 }
 
@@ -51,6 +50,10 @@ $highlight-clr: #F2AA6B;
 
 
 @media (orientation: landscape) {
+  .Skills__title {
+    margin: 20vh auto 0 auto;
+  }
+
   .Skills--sticky {
     top: 10vh;
   }
@@ -64,6 +67,10 @@ $highlight-clr: #F2AA6B;
 }
 
 @media (orientation: portrait) {
+  .Skills__title {
+    margin: 5vh auto 0 auto;
+  }
+
   .Skills--sticky {
     top:5vh;
   }
