@@ -1,14 +1,20 @@
-import React from "react";
+import React, {Suspense} from "react";
 import TitleCard from "./component/TitleCard";
-import About from "./component/About";
-import Skills from "./component/Skills";
+
+const About = React.lazy(() => import('./component/About'));
+
+const Skills = React.lazy(() => import('./component/Skills'));
 
 function App() {
     return (
     <div className="Main">
       <TitleCard/>
-      <About/>
-      <Skills/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <About/>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Skills/>
+      </Suspense>
     </div>
     )
 };
