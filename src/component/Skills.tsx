@@ -46,20 +46,23 @@ function Skills () {
             SKILLS
           </h2>
         </div>
-      </div>
-      <div className="Skills__container">
-        <div className="Skills__animation__container">
-          <div className="Skills__animation">
-            <div id="SkillsAnimation"/>
-            <animated.div ref={springRef} data-frame={scrollSpring.spring}></animated.div>
-            <Lottie 
-            animationRef={animRef}
-            config={{
-              animationData: SkillsAnimation,
-              loop: false,
-              autoplay: false,
-              }}
-            />
+        <div className="Skills__content__container">
+          <div className="Skills__list">
+            Test
+          </div>
+          <div className="Skills__animation__container">
+            <div className="Skills__animation">
+              <div id="SkillsAnimation"/>
+              <animated.div ref={springRef} data-frame={scrollSpring.spring}></animated.div>
+              <Lottie 
+              animationRef={animRef}
+              config={{
+                animationData: SkillsAnimation,
+                loop: false,
+                autoplay: false,
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
