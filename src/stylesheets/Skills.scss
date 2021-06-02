@@ -57,7 +57,7 @@ $highlight-clr: #F2AA6B;
   display:grid;
   position: absolute;
   grid-auto-rows: min-content;
-  row-gap : 1.5em;
+  row-gap : .6em;
   top: 50%;
   left: 50%;
   height: fit-content;
@@ -67,10 +67,10 @@ $highlight-clr: #F2AA6B;
 
 .Skills__list__design__container{
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 25% 25% 25%;
   grid-template-rows: 3fr 1fr;
-  column-gap: 1em;
-  row-gap: .8em;
+  column-gap: .4em;
+  row-gap: .4em;
   justify-items: center;
   align-items: center;
   justify-self: center;
@@ -80,10 +80,10 @@ $highlight-clr: #F2AA6B;
 
 .Skills__list__motion__container{
   display: grid;
-  grid-template-columns: 30% 30%;
+  grid-template-columns: 25% 25%;
   grid-auto-rows: min-content;
   column-gap: .4em;
-  row-gap: .8em;
+  row-gap: .4em;
   justify-items: center;
   align-items: center;
   justify-self: center;
@@ -93,10 +93,10 @@ $highlight-clr: #F2AA6B;
 
 .Skills__list__dev__container{
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 25% 25% 25%;
   grid-auto-rows: min-content;
   column-gap: .4em;
-  row-gap: .8em;
+  row-gap: .4em;
   justify-items: center;
   align-items: center;
   justify-self: center;
@@ -126,6 +126,7 @@ $highlight-clr: #F2AA6B;
 }
 
 .Skills__list__descriptions {
+  font-size: calc(12px + .05vw);
   font-weight: 200;
 }
 

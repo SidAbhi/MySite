@@ -5,7 +5,7 @@ import '../stylesheets/Skills.scss';;
 import SkillsAnimation from '../animations/SkillsAnimation.json'
 // import lottie from "lottie-web";
 import { Lottie } from '@crello/react-lottie';
-import { PhotoshopSvg, IllustratorSvg, InDesignSvg, AfterEffectsSvg, BlenderSvg, HtmlSvg, CssSvg, JsSvg } from './SvgCollection';
+import { PhotoshopSvg, IllustratorSvg, InDesignSvg, AfterEffectsSvg, BlenderSvg, HtmlSvg, CssSvg, JsSvg, ReactSvg, ReduxSvg, TsSvg } from './SvgCollection';
 
 function Skills () {
   const animRef: any = useRef();
@@ -23,6 +23,8 @@ function Skills () {
   let [scrollAnim, setScrollAnim] = useState(0);
 
   let animValue: any = ["translate(-90%, -50%)", "translate(-90%, -50%)", "translate(-50%, -50%)", "translate(-50%, -50%)", "translate(-10%, -50%)", "translate(-10%, -50%)"];
+
+  let animValueEnd: any = ["translate(-90%, -50%)", "translate(-90%, -50%)", "translate(-50%, -50%)", "translate(-50%, -50%)", "translate(-50%, -50%)", "translate(-50%, -50%)"];
 
   useScroll(({ xy: [, y] }) => {
       let animControl = (animRef).current;
@@ -111,11 +113,11 @@ function Skills () {
               style = {{
                 transform: scrollSpring.spring.to({ 
                   range: [0, scrollThresh * 8.5/12, scrollThresh * 9.5/12, scrollThresh * 11.5/12, scrollThresh * 12.5/12, scrollThresh +200], 
-                  output: animValue
+                  output: animValueEnd
                 }),
                 opacity: scrollSpring.spring.to({ 
                   range: [0, scrollThresh * 9/12, scrollThresh * 9.5/12, scrollThresh * 11.5/12, scrollThresh * 12/12, scrollThresh +200], 
-                  output: [0, 0, 1, 1, 0, 0]
+                  output: [0, 0, 1, 1, 1, 1]
                 }),
               }}
             >
@@ -133,9 +135,9 @@ function Skills () {
                 <div className="Skills__list__descriptions">
                   Javascript
                 </div>
-                <PhotoshopSvg/>
-                <IllustratorSvg/>
-                <InDesignSvg/>
+                <ReactSvg/>
+                <ReduxSvg/>
+                <TsSvg/>
                 <div className="Skills__list__descriptions">
                   React
                 </div>
