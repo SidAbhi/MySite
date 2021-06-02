@@ -5,7 +5,7 @@ import '../stylesheets/Skills.scss';;
 import SkillsAnimation from '../animations/SkillsAnimation.json'
 // import lottie from "lottie-web";
 import { Lottie } from '@crello/react-lottie';
-import { PhotoshopSvg, IllustratorSvg, InDesignSvg, AfterEffectsSvg, BlenderSvg } from './SvgCollection';
+import { PhotoshopSvg, IllustratorSvg, InDesignSvg, AfterEffectsSvg, BlenderSvg, HtmlSvg, CssSvg, JsSvg } from './SvgCollection';
 
 function Skills () {
   const animRef: any = useRef();
@@ -119,7 +119,33 @@ function Skills () {
                 }),
               }}
             >
-              Frontend Development
+              <div className="Skills__list__title">Web development</div>
+              <div className="Skills__list__dev__container">
+                <HtmlSvg/>
+                <CssSvg/>
+                <JsSvg/>
+                <div className="Skills__list__descriptions">
+                  HTML
+                </div>
+                <div className="Skills__list__descriptions">
+                  CSS
+                </div>
+                <div className="Skills__list__descriptions">
+                  Javascript
+                </div>
+                <PhotoshopSvg/>
+                <IllustratorSvg/>
+                <InDesignSvg/>
+                <div className="Skills__list__descriptions">
+                  React
+                </div>
+                <div className="Skills__list__descriptions">
+                  Redux
+                </div>
+                <div className="Skills__list__descriptions">
+                  Typescript
+                </div>
+              </div>
             </animated.div>
           </div>
           <div className="Skills__animation__container">
