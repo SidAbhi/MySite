@@ -71,7 +71,7 @@ function TitleCard() {
   });
 
   const skills = ['Front', 'end ', 'development'];
-  const skills2 = ['Visual ', 'design & ', 'motion ', 'graphics'];
+  const skills2 = ['Visual ', '& ', 'motion ', 'design'];
   const skills3 = ['3D ', 'CG ', '& ', 'VFX'];
 
   const skillTrail = useTrail(
